@@ -1,7 +1,9 @@
+import styles from "@/public/styles/pages/home/home.module.scss";
+
 export default function Home() {
   return (
     <body>
-      <h1>Hello world</h1>
+      <main id={styles.main}></main>
     </body>
   );
 }

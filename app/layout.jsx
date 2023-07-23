@@ -1,6 +1,6 @@
+// GLOBAL STYLE
 import "./globals.css";
 // import { Inter } from 'next/font/google'
-
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: "Stash",
     description: "Stash Tea: Tea Blends, Recipes, Gifts & Teaware",
-    url: "",
+    url: "https://stash-ead.vercel.app",
     type: "website",
     // images: [
     //   {
