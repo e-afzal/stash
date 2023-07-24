@@ -1,0 +1,117 @@
+footer#footer {
+  background-color: #000;
+  .footer_container {
+    padding-inline: clamp(2.5rem, 5.5vw, 5rem);
+    padding-block: 5rem;
+    max-width: 1600px;
+    margin-inline: auto;
+    .footer_primary {
+      display: flex;
+      justify-content: space-between;
+      .logo_container {
+        img {
+          height: 77px;
+          width: auto;
+        }
+      }
+      .connected_container {
+        h4 {
+          color: #00b38f;
+          font-weight: 300;
+          font-family: "Kanit", sans-serif;
+          font-size: 2.4rem;
+          text-transform: capitalize;
+        }
+        p {
+          color: #ccc;
+          font-weight: 300;
+          font-family: "Kanit", sans-serif;
+          max-width: 45ch;
+          margin-top: 5px;
+          font-size: 1.55rem;
+        }
+        .input_box {
+          margin-top: 2rem;
+          input,
+          button {
+            font-family: "Kanit", sans-serif;
+            font-size: 1.5rem;
+            padding: 5px 1rem;
+          }
+          input {
+            color: #333;
+            &::placeholder {
+              color: #707070;
+              text-transform: capitalize;
+            }
+          }
+          button {
+            background-color: #00b38f;
+            color: #fff;
+            text-transform: uppercase;
+          }
+        }
+        .social_icons_container {
+        }
+      }
+    }
+    .footer_secondary {
+      margin-top: 5rem;
+      display: flex;
+      column-gap: 5.5rem;
+      .secondary_section {
+        h4 {
+          color: #fff;
+          font-family: "Kanit", sans-serif;
+          font-weight: 200;
+          text-transform: uppercase;
+          font-size: 1.8rem;
+          letter-spacing: 0.75px;
+        }
+        ul {
+          margin-top: 1.5rem;
+          li {
+            margin-bottom: 1rem;
+            a {
+              color: #ccc;
+              text-transform: none;
+              font-family: "Kanit", sans-serif;
+              font-weight: 300;
+              font-size: 1.5rem;
+              letter-spacing: 0.2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1124px) {
+  footer#footer {
+    .footer_container {
+      .footer_primary {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 4.5rem;
+      }
+      .footer_secondary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+        row-gap: 4.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 811px) {
+  footer#footer {
+    .footer_container {
+      .footer_primary {
+        .connected_container p {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+header.header {
+  background-color: #000;
+  nav {
+    max-width: 1600px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+
+    .image_container {
+      display: flex;
+      justify-content: center;
+      a {
+        img {
+          height: 77px;
+          width: auto;
+        }
+      }
+    }
+
+    .secondary_nav_container {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      ul.nav_menu_items {
+        height: 25px;
+        display: flex;
+        align-items: center;
+        column-gap: 3rem;
+        li {
+          font-size: 1.7rem;
+          color: #fff;
+          cursor: pointer;
+          font-family: "Kanit", sans-serif;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.75px;
+        }
+      }
+      .icons_container {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        column-gap: 1.5rem;
+        img {
+          height: 25px;
+          width: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,4 @@
-/* FONT WEIGHTS */
-/* JOST - 200 | 300 | 400 */
-/* @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap"); */
-/* ROBOTO - 400 */
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap");
 
 :root {
   --max-width: 1190px;
@@ -63,6 +59,16 @@ a {
   text-transform: uppercase;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  border-radius: 0px;
+}
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
