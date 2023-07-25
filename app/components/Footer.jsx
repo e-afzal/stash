@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 // STYLES
@@ -5,7 +6,6 @@ import styles from "@/public/styles/components/footer.module.scss";
 
 // ASSET IMPORTS
 import logo from "@/public/images/nav_logo_white.webp";
-import Link from "next/link";
 
 const Footer = () => {
   const footerLinks = [
@@ -31,9 +31,9 @@ const Footer = () => {
     {
       title: "ordering",
       links: [
-        { title: "Track your Order", url: "" },
-        { title: "Shipping & Handling", url: "" },
-        { title: "Returns & Exchanges", url: "" },
+        { title: "Track your Order", url: "#" },
+        { title: "Shipping & Handling", url: "#" },
+        { title: "Returns & Exchanges", url: "#" },
       ],
     },
   ];

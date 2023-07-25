@@ -1,5 +1,10 @@
 header.header {
+  display: none;
   background-color: #000;
+  min-height: max-content;
+  position: fixed;
+  z-index: 20;
+  width: 100%;
   nav {
     max-width: 1600px;
     margin-inline: auto;
@@ -50,6 +55,114 @@ header.header {
         img {
           height: 25px;
           width: auto;
+        }
+      }
+    }
+  }
+
+  .overlay_container {
+    display: none;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    margin-top: 14.55rem;
+    z-index: 20;
+    background-color: #fff;
+
+    // TEA DIALOG BOX
+    &.tea_overlay_container {
+      display: block;
+
+      .tea_dialog {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        a.tea_dialog_box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          font-family: "Kanit", sans-serif;
+          font-size: 21px;
+          letter-spacing: 0.25px;
+          font-weight: 300;
+          &:nth-child(1) {
+            grid-column: 1/2;
+          }
+          &:nth-child(2) {
+            grid-column: 1/2;
+          }
+          &:nth-child(3) {
+            grid-column: 2/3;
+            grid-row: 1/3;
+          }
+        }
+      }
+    }
+
+    // TEAWARE DIALOG BOX
+    &.teaware_overlay_container {
+      display: block;
+
+      .teaware_dialog {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        a.teaware_dialog_box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          font-family: "Kanit", sans-serif;
+          font-size: 21px;
+          letter-spacing: 0.25px;
+          font-weight: 300;
+          grid-column: span 1;
+          &:nth-child(1) {
+            background-color: #ffe4c4;
+          }
+        }
+      }
+    }
+
+    &.tea_overlay_container,
+    &.teaware_overlay_container {
+      display: none;
+    }
+  }
+}
+
+// MEDIA QUERY - REVEAL NAV @ 811px+
+@media screen and (min-width: 811px) {
+  header.header {
+    display: block;
+  }
+}
+
+// MEDIA QUERY - TEA DIALOG BOX
+@media screen and (max-width: 600px) {
+  header.header {
+    .overlay_container {
+      &.tea_overlay_container {
+        .tea_dialog {
+          grid-template-columns: 1fr;
+
+          a.tea_dialog_box {
+            &:nth-child(1) {
+              grid-column: 1/2;
+              grid-row: 1/2;
+            }
+            &:nth-child(2) {
+              grid-column: 1/2;
+              grid-row: 2/3;
+            }
+            &:nth-child(3) {
+              grid-column: 1/2;
+              grid-row: 3/4;
+            }
+          }
         }
       }
     }

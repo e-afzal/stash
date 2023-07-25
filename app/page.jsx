@@ -6,6 +6,7 @@ import styles from "@/public/styles/pages/home/home.module.scss";
 
 // COMPONENTS
 import Navbar from "./components/Navbar";
+import NavbarMobile from "./components/NavbarMobile";
 import Footer from "./components/Footer";
 
 // ASSET IMPORTS
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <body>
       <Navbar />
+      <NavbarMobile />
       <main id={styles.main}>
         <section id={styles.showcase}>
           <Image src={showcase} alt="Japanese Shincha Green Tea " />

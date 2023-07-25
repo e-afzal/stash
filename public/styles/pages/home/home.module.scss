@@ -1,4 +1,5 @@
 main#main {
+  margin-top: 14.56rem;
   section#showcase {
     position: relative;
     height: 630px;
@@ -45,5 +46,11 @@ main#main {
         border-radius: 5.5px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 811px) {
+  main#main {
+    margin-top: 8rem;
   }
 }
