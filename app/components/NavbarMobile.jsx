@@ -161,10 +161,9 @@ const NavbarMobile = () => {
           </Accordion.Root>
         ))}
 
-        {/* TEAWARE ACCORDION */}
         <div className={styles.social_icons}>
-          {socialIcons.map((each) => (
-            <Link href={each.url}>
+          {socialIcons.map((each, index) => (
+            <Link key={index} href={each.url} target="_blank">
               <Image src={each.icon} alt="Icon" />
             </Link>
           ))}

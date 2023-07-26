@@ -1,0 +1,50 @@
+.swiper_container {
+  max-width: 509px;
+  margin: 0;
+  height: auto;
+
+  .swiper_slide {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.swiper_thumbs_container {
+  margin-inline: 0;
+  margin-top: 1.5rem;
+  max-width: 509px;
+  height: max-content;
+
+  .swiper_slide {
+    display: flex;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+//! Swiper container size of 425px reduced to occupy less space from <=1175px
+@media screen and (max-width: 1175px) {
+  .swiper_container,
+  .swiper_thumbs_container {
+    max-width: 425px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .swiper_container,
+  .swiper_thumbs_container {
+    margin-inline: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .swiper_thumbs_container .swiper_slide img {
+    width: 8rem;
+    height: 8rem;
+  }
+}

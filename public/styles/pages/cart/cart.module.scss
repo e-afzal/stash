@@ -1,0 +1,164 @@
+main#main {
+  margin-top: calc(14.56rem + clamp(5rem, 8.5vw, 7rem));
+  margin-bottom: clamp(5rem, 8.5vw, 8rem);
+
+  h2 {
+    padding-inline: 2.5rem;
+    margin-inline: auto;
+    max-width: 1290px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-size: 3.6rem;
+    color: #000;
+    text-transform: capitalize;
+  }
+
+  .cart_container {
+    padding-inline: 2.5rem;
+    margin-top: 4rem;
+    margin-inline: auto;
+    max-width: 1290px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: clamp(5rem, 4vw, 7rem);
+
+    // SECTION: CART TABLE
+    section#cart_table {
+      p.itemNumber {
+        font-size: 1.45rem;
+        font-family: sans-serif;
+        color: #484848;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #d3d3d3;
+      }
+      .item_card {
+        padding-block: 3.5rem;
+        border-bottom: 1px solid #d3d3d3;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .item_content {
+          p {
+            font-family: "Kanit", sans-serif;
+            color: #000;
+          }
+          p.item_title {
+            font-size: clamp(1.6rem, 3vw, 1.7rem);
+            font-weight: 400;
+          }
+          p.item_perUnit {
+            font-size: 1.55rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+          }
+          span.removeBtn {
+            display: inline-block;
+            font-family: "Kanit", sans-serif;
+            font-weight: 400;
+            font-size: 1.45rem;
+            text-transform: capitalize;
+            margin-top: 1.5rem;
+            color: crimson;
+            cursor: pointer;
+          }
+        }
+        p.item_subtotal {
+          font-family: "Kanit", sans-serif;
+          color: #000;
+          font-size: clamp(1.6rem, 3vw, 1.7rem);
+          font-weight: 400;
+          text-align: right;
+        }
+
+        &:last-child {
+          //   border-bottom: none;
+        }
+      }
+    }
+
+    // SECTION: CART SUMMARY
+    section#cart_summary {
+      h4.summary_title {
+        font-family: "Kanit", sans-serif;
+        font-weight: 400;
+        font-size: 1.95rem;
+        color: #000;
+      }
+      .summary_flex {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #999;
+        padding-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
+        p {
+          font-family: "Kanit", sans-serif;
+          font-weight: 300;
+          font-size: 1.7rem;
+        }
+        p.units {
+          color: #484848;
+        }
+      }
+      .subtotal_flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+          font-family: "Kanit", sans-serif;
+          font-weight: 400;
+          &.subtotal_description {
+            font-size: 1.75rem;
+          }
+          &.subtotal_amount {
+            font-size: 2.8rem;
+          }
+        }
+      }
+      a {
+        text-align: center;
+        min-width: 205px;
+        display: block;
+        font-family: "Kanit", sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.75px;
+        background-color: #0058a3;
+        color: #fff;
+        border-radius: 30px;
+        margin-top: 4rem;
+        padding-block: 1.2rem;
+        padding-inline: 3.2rem;
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
+
+// MEDIA QUERY - DEFAULT 'MY' for MAIN element
+@media screen and (max-width: 811px) {
+  main#main {
+    margin-top: calc(8rem + 5rem);
+
+    .cart_container {
+      grid-template-columns: 1fr;
+      row-gap: 5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main#main {
+    .cart_container {
+      section#cart_table {
+        .item_card {
+          grid-template-columns: 2fr 1fr 1fr;
+          .item_image img {
+            width: 110px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

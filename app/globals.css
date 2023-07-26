@@ -74,3 +74,17 @@ input {
     color-scheme: dark;
   }
 } */
+
+a.cta {
+  display: inline-block;
+  font-size: 1.65rem;
+  font-family: "Kanit", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.65px;
+  background-color: #000;
+  padding: 1.2rem 3.2rem;
+  margin-top: 2.5rem;
+  color: #fff;
+  border-radius: 5.5px;
+}
