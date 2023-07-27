@@ -1,0 +1,132 @@
+main#main {
+  margin-top: calc(14.56rem + clamp(5rem, 8.5vw, 7rem));
+  margin-bottom: clamp(5rem, 8.5vw, 8rem);
+
+  .shipping_container {
+    max-width: 815px;
+    margin-inline: auto;
+    border: 1px solid #0058a3;
+    border-radius: 5px;
+    h2.shipping_title {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      background-color: #0058a3;
+      color: #fff;
+      font-family: "Kanit", sans-serif;
+      text-transform: capitalize;
+      padding: 1rem 2.5rem;
+    }
+
+    form {
+      margin-block: 2rem;
+      padding-inline: 2.5rem;
+      .contact_container,
+      .shipping_details_container {
+        h4 {
+          display: block;
+          font-family: "Kanit", sans-serif;
+          font-weight: 300;
+          font-size: 2.2rem;
+          text-transform: capitalize;
+          margin-bottom: 1.5rem;
+        }
+        input {
+          display: block;
+          font-family: "Kanit", sans-serif;
+          font-weight: 300;
+          font-size: 1.4rem;
+          border: 1px solid #707070;
+          padding: 0.5rem 1.5rem;
+          margin-bottom: 1.5rem;
+          border-radius: 2.5px;
+          transition: all 0.3s;
+
+          &[type="number"] {
+            appearance: textfield;
+          }
+
+          &:focus {
+            box-shadow: 0px 0px 10px rgba($color: #0058a3, $alpha: 0.3);
+            border-color: #0058a3;
+          }
+        }
+      }
+      .shipping_details_container {
+        margin-top: 5rem;
+        .details_flex {
+          display: flex;
+          column-gap: 3rem;
+
+          select {
+            width: 22.6rem;
+            margin-bottom: 1.5rem;
+            font-family: "Kanit", sans-serif;
+            font-weight: 300;
+            font-size: 1.4rem;
+            border: 1px solid #707070;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2.5px;
+            transition: all 0.3s;
+            background-color: transparent;
+
+            &:focus {
+              box-shadow: 0px 0px 10px rgba($color: #0058a3, $alpha: 0.3);
+              border-color: #0058a3;
+            }
+          }
+        }
+      }
+      a {
+        text-align: center;
+        min-width: 205px;
+        display: block;
+        font-family: "Kanit", sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.75px;
+        background-color: #0058a3;
+        color: #fff;
+        border-radius: 30px;
+        margin-top: 4rem;
+        padding-block: 1.2rem;
+        padding-inline: 3.2rem;
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
+
+// MEDIA QUERY - DEFAULT 'MY' for MAIN element
+@media screen and (max-width: 811px) {
+  main#main {
+    margin-top: calc(8rem + 5rem);
+  }
+}
+
+@media screen and (max-width: 855px) {
+  main#main {
+    .shipping_container {
+      max-width: 500px;
+      padding-inline: 2rem;
+      border: none;
+      form {
+        margin-block: 0;
+        padding-bottom: 3rem;
+        border: 1px solid #0058a3;
+        .contact_container {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+        }
+        .shipping_details_container {
+          .details_flex {
+            flex-direction: column;
+            select {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
