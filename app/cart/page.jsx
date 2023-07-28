@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 // STYLES
 import styles from "@/public/styles/pages/cart/cart.module.scss";
 
@@ -9,8 +12,6 @@ import Footer from "../components/Footer";
 
 // ASSET IMPORT
 import dummyImage from "@/public/images/products/tea/teabags/3930050051/1.webp";
-import Image from "next/image";
-import Link from "next/link";
 
 const Cart = () => {
   return (
