@@ -34,7 +34,7 @@ const Shipping = () => {
               <h4>shipping method</h4>
               <div className={styles.method_container}>
                 <div className={styles.input_control}>
-                  <input type="radio" id="standard" checked />
+                  <input type="radio" id="standard" defaultChecked />
                   <label htmlFor="standard">
                     Standard Shipping (3 - 5 business days)
                   </label>

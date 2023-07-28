@@ -66,6 +66,8 @@ main#main {
           max-width: 570px;
 
           .input_control {
+            display: flex;
+            align-items: center;
             input {
               margin-right: 7px;
             }

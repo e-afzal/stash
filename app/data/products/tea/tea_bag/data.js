@@ -4,8 +4,28 @@ const teaBags = [
     id: 3948988355,
     title: "Double Bergamot Earl Grey Black Tea",
     handle: "double-bergamot-earl-grey-black-tea-bagged",
-    description:
-      '<p>We went the extra mile to make this extraordinary tea with extra bergamot oil extra bold. We even sourced it from the extra sunny orchards of Calabria, Italy. *Italian accent* It\'s-a delicious! 👨🏻\u200d🍳💋</p>\n<p>This version of Earl Grey is one-of-a-kind. No, you’re not seeing double. But you will taste it! Stash’s Earl Grey tea has been among tea lovers’ favorites for years. It’s no wonder, since its citrusy bergamot flavor is carefully balanced with a blend of fine, bold black teas. Fast forward a few years, the adventurous drinkers of Stash Tea started looking to add more Earl Grey to their stash of tea... and voilà! That’s the story of how our one-of-a-kind Double Bergamot Earl Grey black tea was created. <br></p>\n<meta charset="utf-8">\n<p><a href="https://www.stashtea.com/products/double-bergamot-earl-grey-black-tea-loose" title="Double Bergamot Earl Grey Black Tea"><span color="#00b38f" style="color: #00b38f;">Shop our Double Bergamot Earl Grey Black Tea in loose leaf</span></a></p>\n<p><b>Ingredients</b><br>Blended black teas, bergamot oil</p>\n<p><b>Steeping Instructions</b><br>3-5 minutes at 190-209 degrees Fahrenheit</p>\n<p><b>Caffeinated</b><br>Yes</p>\n<ul></ul>\n<p><b>Tea Bag Packaging</b></p>\n<ul>\n<li>18 ct - 18 tea bags in a box</li>\n<li>Case - six 18 ct boxes</li>\n</ul>\n<!-- split -->\n<h2>Earl Grey Tea Recipes</h2>\n<p>Looking for more ways to get your Double Bergamot fix? Substitute our regular Earl Grey tea for this Double Bergamot flavor in any of these recipes:</p>\n<ul>\n<li><span style="color: #75c044;"><a href="/blogs/recipes/earl-grey-tea-cake-recipe-with-honey-buttercream-frosting" title="Earl Grey Tea Cake With Honey Buttercream Frosting Recipe | Stash Tea" style="color: #75c044;">Earl Grey Cake</a></span></li>\n<li><span style="color: #75c044;"><a href="/blogs/recipes/earl-grey-tea-bag-cookies" title="Earl Grey Tea Bag Cookies Recipe | Stash Tea" style="color: #75c044;">Earl Grey Cookies</a></span></li>\n<li><span style="color: #75c044;"><a href="/blogs/recipes/earl-grey-lavender-bourbon-punch-tea-recipe" title="Earl Grey Lavender Bourbon Punch Recipe | Stash Tea" style="color: #75c044;">Earl Grey Bourbon Punch<br></a></span></li>\n</ul>\n<h2><span>*Staff Pick*</span></h2>\n<p><em>"</em><span>Bergamot jazzes up the tea with a wonderful fragrance, and upping the Bergamot yields a bolder flavor without overpowering the taste.</span><em>" - </em><strong>Dan G. (General Manager)</strong></p>',
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `We went the extra mile to make this extraordinary tea with extra bergamot oil extra bold. We even sourced it from the extra sunny orchards of Calabria, Italy. *Italian accent* It's-a delicious! 👨🏻‍🍳💋|This version of Earl Grey is one-of-a-kind. No, you’re not seeing double. But you will taste it! Stash’s Earl Grey tea has been among tea lovers’ favorites for years. It’s no wonder, since its citrusy bergamot flavor is carefully balanced with a blend of fine, bold black teas. Fast forward a few years, the adventurous drinkers of Stash Tea started looking to add more Earl Grey to their stash of tea... and voilà! That’s the story of how our one-of-a-kind Double Bergamot Earl Grey black tea was created.`,
+      },
+      {
+        title: "ingredients",
+        content: "Blended black teas, bergamot oil",
+      },
+      {
+        title: "steeping instructions",
+        content: `3-5 minutes at 190-209 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `Yes`,
+      },
+      {
+        title: "packaging",
+        content: "18 ct - 18 tea bags in a box|Case - six 18 ct boxes",
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeinated teas",
@@ -40,9 +60,9 @@ const teaBags = [
       },
     ],
     images: [
-      "/images/products/tea/teabags/3948988355/3948988355_1.webp",
-      "/images/products/tea/teabags/3948988355/3948988355_2.webp",
-      "/images/products/tea/teabags/3948988355/3948988355_3.webp",
+      "/images/products/tea/teabags/3948988355/1.webp",
+      "/images/products/tea/teabags/3948988355/2.webp",
+      "/images/products/tea/teabags/3948988355/3.webp",
     ],
     options: [
       {
@@ -58,8 +78,28 @@ const teaBags = [
     id: 3933106179,
     title: "Breakfast in Paris Black Tea",
     handle: "breakfast-in-paris-black-tea-bagged",
-    description:
-      '<p>This tea + you, sittin’ in a tree. S-I-P-P-I-N-G.</p>\n<p>Meet your new crush. Named after the City of Love, because this blend of lavender, bergamot citrus, and vanilla will have you longing to brew up cup after cup. Yes, this interesting and fragrant tea blend has a certain je ne sais quoi. It just might make you fall in love... with the tea, that is.</p>\n<p>You might want to call your new love a lavender tea, and you wouldn’t necessarily be wrong as the lavender is a forward flavor in this blend. But what you really have with Breakfast in Paris is a captivating <em>Earl Grey</em> lavender tea, with a hint of vanilla.</p>\n<p>As they say in Paris, voilá. <br></p>\n<meta charset="utf-8">\n<p><a href="https://www.stashtea.com/products/breakfast-in-paris-black-tea-loose" title="Breakfast in Paris Black Tea"><span color="#00b38f" style="color: #00b38f;">Shop our Breakfast in Paris Black Tea in loose leaf</span></a></p>\n<h4>Ingredients</h4>\n<p>Blended black teas, lavender, bergamot oil, vanilla extract</p>\n<h4>Steeping Instructions</h4>\n<p>3-5 minutes at 190-209 degrees Fahrenheit</p>\n<h4>Caffeinated</h4>\n<p>Yes</p>\n<ul></ul>\n<h4>Tea Bag Packaging</h4>\n<ul>\n<li>18 ct - 18 tea bags in a box</li>\n<li>Case - six 18 ct boxes</li>\n</ul>',
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `This tea + you, sittin’ in a tree. S-I-P-P-I-N-G.|Meet your new crush. Named after the City of Love, because this blend of lavender, bergamot citrus, and vanilla will have you longing to brew up cup after cup. Yes, this interesting and fragrant tea blend has a certain je ne sais quoi. It just might make you fall in love... with the tea, that is.|You might want to call your new love a lavender tea, and you wouldn’t necessarily be wrong as the lavender is a forward flavor in this blend. But what you really have with Breakfast in Paris is a captivating Earl Grey lavender tea, with a hint of vanilla.|As they say in Paris, voilá.`,
+      },
+      {
+        title: "ingredients",
+        content: "Blended black teas, lavender, bergamot oil, vanilla extract",
+      },
+      {
+        title: "steeping instructions",
+        content: `3-5 minutes at 190-209 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `Yes`,
+      },
+      {
+        title: "packaging",
+        content: "18 ct - 18 tea bags in a box|Case - six 18 ct boxes",
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeinated teas",
@@ -113,8 +153,29 @@ const teaBags = [
     id: 3949020355,
     title: "Orange Spice Black Tea",
     handle: "orange-spice-black-tea-bagged",
-    description:
-      '<p>We’re not saying this is the best black tea out there... but we’re not NOT saying it.</p>\n<p>Rumor has it, this warm and spicy tea was literally made to fuel adventures. Our secret black tea blend is full-bodied and chock full of bold, brisk flavor. As a warmup to your fun-filled day ahead, we wanted to take your taste buds on a flavor adventure of their own; we took that secret black tea blend and mixed it with <span style="color: #75bf43;"><a href="/blogs/education/sourcing-stash-origins-of-saigon-cinnamon" title="Origins of Saigon Cinnamon, the Flavor Behind Our Chai Teas | Stash Tea" style="color: #75bf43;">ultra-fine cinnamon</a></span>, orange peel, and orange oil.</p>\n<p>Before you set out for the day ahead, we have one word to explain why you should sustain your journey with this black tea. <strong>Caffeine</strong>. We suggest sipping this in the morning to boost your energy with a bold and citrusy cuppa. Better yet, put it in a tumbler and take it along to keep yourself caffeinated and alert from the start of your venture to the end!<br></p>\n<p><a href="/products/orange-spice-black-tea-loose" title="Orange Spice Black Loose Leaf Tea | Stash Tea"><span color="#00b38f" style="color: #75c044;">Shop our Orange Spice Black Tea in loose leaf</span></a></p>\n<h4>Ingredients</h4>\n<p>Blended black teas, orange peel, cinnamon, orange oil, natural flavor of clove</p>\n<h4>Steeping Instructions</h4>\n<p>3-5 minutes at 190-209 degrees Fahrenheit</p>\n<h4>Caffeinated</h4>\n<p>Yes</p>\n<h4>Tea Bag Packaging</h4>\n<ul>\n<li>20 ct - 20 tea bags in a box</li>\n<li>Case - six 20 ct boxes</li>\n<li>30 ct - 30 tea bags in a box</li>\n<li>\n<p class="p1">Case - six 30 ct boxes</p>\n</li>\n</ul>',
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `We’re not saying this is the best black tea out there... but we’re not NOT saying it.|Rumor has it, this warm and spicy tea was literally made to fuel adventures. Our secret black tea blend is full-bodied and chock full of bold, brisk flavor. As a warmup to your fun-filled day ahead, we wanted to take your taste buds on a flavor adventure of their own; we took that secret black tea blend and mixed it with ultra-fine cinnamon, orange peel, and orange oil.|Before you set out for the day ahead, we have one word to explain why you should sustain your journey with this black tea. Caffeine. We suggest sipping this in the morning to boost your energy with a bold and citrusy cuppa. Better yet, put it in a tumbler and take it along to keep yourself caffeinated and alert from the start of your venture to the end!`,
+      },
+      {
+        title: "ingredients",
+        content:
+          "Blended black teas, orange peel, cinnamon, orange oil, natural flavor of clove",
+      },
+      {
+        title: "steeping instructions",
+        content: `3-5 minutes at 190-209 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `Yes`,
+      },
+      {
+        title: "packaging",
+        content: `20 ct - 20 tea bags in a box|Case - six 20 ct boxes|30 ct - 30 tea bags in a box|Case - six 30 ct boxes`,
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeinated teas",
@@ -193,8 +254,28 @@ const teaBags = [
     id: 3949008515,
     title: "Jasmine Blossom Green Tea",
     handle: "jasmine-blossom-green-tea-bagged",
-    description:
-      '<p>If jasmine tea were to compete in a popularity contest, it would leave with the blue ribbon. After all, it’s one of the world’s most commonly enjoyed flavored teas. It is wildly popular in China, where most of the world’s jasmine blossoms are grown.</p>\n<p>The combination of jasmine and green tea creates a flavored tea that still allows you to experience the taste of the green tea, but also enjoy a floral flavor and aroma.</p>\n<p><a href="https://www.stashtea.com/products/jasmine-blossom-green-tea-loose"><span color="#00b38f" style="color: #00b38f;">Shop our Jasmine Blossom Green Tea in loose leaf</span></a></p>\n<p><b>Ingredients</b><br>Green tea, jasmine</p>\n<p><b>Steeping Instructions</b><br>1-3 minutes at 170-190 degrees Fahrenheit</p>\n<p><b>Caffeinated</b><br>Yes</p>\n<p><b>Country of Origin</b><br>China</p>\n<ul></ul>\n<p><b>Tea Bag Packaging</b></p>\n<ul>\n<li>20 ct - 20 tea bags in a box</li>\n<li>Case - six 20 ct boxes</li>\n<li>30 ct - 30 tea bags in a box</li>\n<li>Case - six 30 ct boxes</li>\n</ul>\n<!-- split -->\n<h2>Sourcing Jasmine Flower Tea</h2>\n<p>Our premium quality jasmine tea is <span style="color: #75c044;"><a href="/blogs/education/sourcing-jasmine-flower-tea" title="Sourcing Jasmine Flower Tea | Stash Tea" style="color: #75c044;">created using traditional methods</a></span>. We source our jasmine tea from some of the very best providers out there.</p>',
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `If jasmine tea were to compete in a popularity contest, it would leave with the blue ribbon. After all, it’s one of the world’s most commonly enjoyed flavored teas. It is wildly popular in China, where most of the world’s jasmine blossoms are grown.|The combination of jasmine and green tea creates a flavored tea that still allows you to experience the taste of the green tea, but also enjoy a floral flavor and aroma.`,
+      },
+      {
+        title: "ingredients",
+        content: "Green tea, jasmine",
+      },
+      {
+        title: "steeping instructions",
+        content: `1-3 minutes at 170-190 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `Yes`,
+      },
+      {
+        title: "packaging",
+        content: `20 ct - 20 tea bags in a box|Case - six 20 ct boxes|30 ct - 30 tea bags in a box|Case - six 30 ct boxes`,
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeinated teas",
@@ -272,9 +353,28 @@ const teaBags = [
     id: 3949032579,
     title: "Peach Black Tea",
     handle: "peach-black-tea-bagged",
-    description:
-      '<p>This peach black tea is bursting with juicy peach flavors. It smells and tastes so good that it’s been called <strong>addicting</strong>. More than once. And not just by us.</p>\n<p>But did you ever stop to think, maybe this tea is addicted to you?</p>\n<p>We believe that’s why it makes itself so versatile. You can make a sweet peach iced tea from this blend, unsweetened iced tea, or drink it hot. Choose to add sugar to bring out even more of the natural peach notes, or take it plain. And can we talk about the effects of black tea caffeine? Delightful. Considering its versatili-tea, it’s easy to see why you might think you’re addicted to this bold peach tea. But we know it’s the other way around. <br></p>\n<p><a href="/products/southern-peach-tea" title="Southern Peach Loose Leaf Tea | Stash Tea"><span color="#75c044" style="color: #75c044;">Shop our Southern Peach Tea in loose leaf</span></a></p>\n<h4>Ingredients</h4>\n<p>Blended black teas, natural peach flavor</p>\n<h4>Steeping Instructions</h4>\n<p>3-5 minutes at 190-209 degrees Fahrenheit</p>\n<h4>Caffeinated</h4>\n<p>Yes</p>\n<h4>Tea Bag Packaging</h4>\n<ul>\n<li>20 ct - 20 tea bags</li>\n<li>Case - six 20 ct boxes</li>\n</ul>\n<!-- split -->\n<h2>*Staff Pick*</h2>\n<p><span>"Peach is one of my all-time favorite flavors, in just about everything. Unlike many brands, we do not put anise seed or licorice root in ours. It makes me fill cozy<em>.</em></span>" <strong>– Rian K. (Accounting Specialist) </strong></p>',
-
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `This peach black tea is bursting with juicy peach flavors. It smells and tastes so good that it’s been called addicting. More than once. And not just by us.|But did you ever stop to think, maybe this tea is addicted to you?|We believe that’s why it makes itself so versatile. You can make a sweet peach iced tea from this blend, unsweetened iced tea, or drink it hot. Choose to add sugar to bring out even more of the natural peach notes, or take it plain. And can we talk about the effects of black tea caffeine? Delightful. Considering its versatili-tea, it’s easy to see why you might think you’re addicted to this bold peach tea. But we know it’s the other way around. `,
+      },
+      {
+        title: "ingredients",
+        content: "Blended black teas, natural peach flavor",
+      },
+      {
+        title: "steeping instructions",
+        content: `3-5 minutes at 190-209 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `Yes`,
+      },
+      {
+        title: "packaging",
+        content: `20 ct - 20 tea bags|Case - six 20 ct boxes`,
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeinated teas",
@@ -326,9 +426,29 @@ const teaBags = [
     id: 3930050051,
     title: "Acai Berry Herbal Tea",
     handle: "acai-berry-herbal-tea",
-    description:
-      "<p>Fruity blend combines tart hibiscus with natural acai berry, blackberry, and blackcurrant flavors.</p>\n<p><b>Ingredients</b><br>Hibiscus, rosehips, lemongrass, chicory root, orange peel, licorice root, natural acai flavor, acai powder</p>\n<p><b></b><b>Steeping Instructions</b><br>3-5 minutes at 190-209 degrees Fahrenheit</p>\n<p><b>Caffeinated</b><br>No</p>\n<ul></ul>\n<p><b>Tea Bag Packaging</b></p>\n<ul>\n<li>18 ct - 18 tea bags in a box</li>\n<li>Case - six 18 ct boxes</li>\n</ul>",
-
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `Fruity blend combines tart hibiscus with natural acai berry, blackberry, and blackcurrant flavors.`,
+      },
+      {
+        title: "ingredients",
+        content:
+          "Hibiscus, rosehips, lemongrass, chicory root, orange peel, licorice root, natural acai flavor, acai powder",
+      },
+      {
+        title: "steeping instructions",
+        content: `3-5 minutes at 190-209 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `No`,
+      },
+      {
+        title: "packaging",
+        content: `18 ct - 18 tea bags in a box|Case - six 18 ct boxes`,
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeine-free",
@@ -382,9 +502,29 @@ const teaBags = [
     id: 3948979971,
     title: "Cinnamon Vanilla Herbal Tea",
     handle: "cinnamon-vanilla-herbal-tea",
-    description:
-      '<p>In our most humble opinion, the single best flavor in the world to pair with cinnamon tea is vanilla. There, we said it. But to give this classic combination a tas-tea twist, we added an earthy, light blend of rooibos and chamomile flowers as the base. <br><br>While spicy, warm cinnamon and sweet vanilla are the main players in this herbal tea, all the ingredients come together to give you something that tastes just like fall. If you’re interested in turning this delicious blend into a dessert tea, just add some creamer and a little sweetener for a rich treat. <br><br>What is rooibos? Rooibos (say it like ROY-boss), or red tea is an indigenous herb of South Africa that is made from the fine needle-like leaves of the <em>Aspalathus linearis</em> plant. When the leaves are cut, bruised, and oxidized, they become a reddish-brown color, explaining why it was named rooibos or “red bush”. The outcome of the process leaves us with a smooth, gentle, earthy flavor that pairs easily with a variety of ingredients. This makes it an ideal base for many <span style="color: #75c044;"><a href="/collections/rooibos-tea" title="Rooibos Teas | Stash Tea" style="color: #75c044;">caffeine-free tisanes</a></span>.</p>\n<h4>Ingredients</h4>\n<p>Cinnamon, rooibos, chamomile, sarsaparilla, natural vanilla flavor</p>\n<h4>Steeping Instructions</h4>\n<p>3-5 minutes at 190-209 degrees Fahrenheit</p>\n<h4>Caffeinated</h4>\n<p>No</p>\n<h4>Tea Bag Packaging</h4>\n<ul>\n<li>18 ct - 18 tea bags in a box</li>\n<li>Case - six 18 ct boxes</li>\n</ul>',
-
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `In our most humble opinion, the single best flavor in the world to pair with cinnamon tea is vanilla. There, we said it. But to give this classic combination a tas-tea twist, we added an earthy, light blend of rooibos and chamomile flowers as the base.|While spicy, warm cinnamon and sweet vanilla are the main players in this herbal tea, all the ingredients come together to give you something that tastes just like fall. If you’re interested in turning this delicious blend into a dessert tea, just add some creamer and a little sweetener for a rich treat.|What is rooibos? Rooibos (say it like ROY-boss), or red tea is an indigenous herb of South Africa that is made from the fine needle-like leaves of the Aspalathus linearis plant. When the leaves are cut, bruised, and oxidized, they become a reddish-brown color, explaining why it was named rooibos or “red bush”. The outcome of the process leaves us with a smooth, gentle, earthy flavor that pairs easily with a variety of ingredients. This makes it an ideal base for many caffeine-free tisanes.`,
+      },
+      {
+        title: "ingredients",
+        content:
+          "Cinnamon, rooibos, chamomile, sarsaparilla, natural vanilla flavor",
+      },
+      {
+        title: "steeping instructions",
+        content: `3-5 minutes at 190-209 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `No`,
+      },
+      {
+        title: "packaging",
+        content: `18 ct - 18 tea bags in a box|Case - six 18 ct boxes`,
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeine-free",
@@ -516,9 +656,29 @@ const teaBags = [
     id: 3948977411,
     title: "Chocolate Mint Oolong Tea",
     handle: "chocolate-mint-oolong-tea",
-    description:
-      '<p>Name a more iconic duo than chocolate and mint. We bet it’ll take you <em>oolong</em> time to think of one. Unless you’re a hardcore tea fan (and if you are, welcome home), a hot cuppa isn’t necessarily the first thing you think of when you daydream about chocolate desserts. Enter this smooth, bold oolong dessert tea, with virtually no calories. This blend brews true-to-its-name, with just five natural ingredients, including local <span style="color: #75c044;"><a href="/blogs/education/85703043-our-pacific-northwest-mint" style="color: #75c044;">Pacific Northwest peppermint</a></span>, chocolaty mint flavors are incredibly balanced, to bring you a guiltless dessert tea.<br><br>Want an even more luxurious treat? Add some milk or cream to your brew to make this already decadent chocolate tea even richer.<br><br>The oolong tea in our Chocolate Mint is sourced from the Wuyi Mountains of China. Wuyi teas are grown wild all over the mountains, rather than in a tea garden. This makes the tea taste a bit deeper and richer compared to the lighter, greener, or stone fruit flavors of other types of oolong teas. All around creating a satisfying combination.</p>\n<h4>Ingredients</h4>\n<p>Oolong tea, peppermint, natural chocolate flavor, cocoa powder, carob powder</p>\n<h4>Steeping Instructions</h4>\n<p>1-3 minutes at 160-180 degrees Fahrenheit</p>\n<h4>Caffeinated</h4>\n<p>Yes</p>\n<h4>Tea Bag Packaging</h4>\n<ul>\n<li>18 ct - 18 tea bags in a box</li>\n<li>Case - six 18 ct boxes</li>\n</ul>\n<!-- split -->\n<h2><span></span></h2>',
-
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `Name a more iconic duo than chocolate and mint. We bet it’ll take you oolong time to think of one. Unless you’re a hardcore tea fan (and if you are, welcome home), a hot cuppa isn’t necessarily the first thing you think of when you daydream about chocolate desserts. Enter this smooth, bold oolong dessert tea, with virtually no calories. This blend brews true-to-its-name, with just five natural ingredients, including local Pacific Northwest peppermint, chocolaty mint flavors are incredibly balanced, to bring you a guiltless dessert tea.|Want an even more luxurious treat? Add some milk or cream to your brew to make this already decadent chocolate tea even richer.|The oolong tea in our Chocolate Mint is sourced from the Wuyi Mountains of China. Wuyi teas are grown wild all over the mountains, rather than in a tea garden. This makes the tea taste a bit deeper and richer compared to the lighter, greener, or stone fruit flavors of other types of oolong teas. All around creating a satisfying combination.`,
+      },
+      {
+        title: "ingredients",
+        content:
+          "Oolong tea, peppermint, natural chocolate flavor, cocoa powder, carob powder",
+      },
+      {
+        title: "steeping instructions",
+        content: `1-3 minutes at 160-180 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `Yes`,
+      },
+      {
+        title: "packaging",
+        content: `18 ct - 18 tea bags in a box|Case - six 18 ct boxes`,
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeinated teas",
@@ -571,8 +731,28 @@ const teaBags = [
     id: 3949047747,
     title: "Super Irish Breakfast Black Tea",
     handle: "super-irish-breakfast-black-tea-bagged",
-    description:
-      '<p>We’re not saying that <em>Super</em> Irish Breakfast tea will turn you into a <em>super</em>hero. But when you drink it and the black tea benefits (a.k.a. caffeine) kick in, you might find that you have seemingly magical levels of energy and focus. We suggest drinking this super tea when your to-do list is so long that it’s looking like your arch-nemesis.</p>\n<p>If you’re looking for the best breakfast tea out there, our Super Irish Breakfast has been dubbed the <em>espresso of teas</em>. That’s not only because of its bold blend of Assam and Ceylon teas; when you compare this <span style="color: #75bf43;"><a style="color: #75bf43;" title="Black, Chai &amp; Green Tea: Do They Have Caffeine? | Blog Tea Education | Stash Tea" href="/blogs/education/black-chai-green-tea-do-they-have-caffeine">black tea caffeine content</a></span> to other caffeinated beverages, you might like what you see! It does quite a bit to perk you up.</p>\n<p>There are many different ways to enjoy this breakfast tea. Brew this <em>super</em> strong and flavorful blend, then add milk and sugar. Or if you love brisk bold teas, drink it the traditional Irish way, keeping it plain for an invigorating stiff tea drink.</p>\n<p><span style="color: #75bf43;"><a style="color: #75bf43;" title="Super Irish Breakfast Tea" href="https://www.stashtea.com/products/super-irish-breakfast-black-tea-loose"><span color="#00b38f">Shop our Super Irish Breakfast Black Tea in loose leaf</span></a></span></p>\n<h4>Ingredients</h4>\n<p>Blended black teas</p>\n<h4>Steeping Instructions</h4>\n<p>3-5 minutes at 190-209 degrees Fahrenheit</p>\n<h4>Caffeinated</h4>\n<p>Yes</p>\n<h4>Tea Bag Packaging</h4>\n<ul>\n<li>20 ct -20 tea bags in a box</li>\n<li>Case - six 20 ct boxes</li>\n</ul>\n<!-- split -->\n<h2><span>*Staff Pick*</span></h2>\n<p>"My favorite is our Super Irish Breakfast. I find that during this time of year where it\'s getting warmer but the mornings are still chilly and as tiring as ever, a great way to get myself going is with a cup of strong Super Irish Breakfast. I take mine with cream and sugar for a morning pick-me-up." – Derek K<strong>. (Data Systems Analyst)</strong></p>',
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `We’re not saying that Super Irish Breakfast tea will turn you into a superhero. But when you drink it and the black tea benefits (a.k.a. caffeine) kick in, you might find that you have seemingly magical levels of energy and focus. We suggest drinking this super tea when your to-do list is so long that it’s looking like your arch-nemesis.|If you’re looking for the best breakfast tea out there, our Super Irish Breakfast has been dubbed the espresso of teas. That’s not only because of its bold blend of Assam and Ceylon teas; when you compare this black tea caffeine content to other caffeinated beverages, you might like what you see! It does quite a bit to perk you up.|There are many different ways to enjoy this breakfast tea. Brew this super strong and flavorful blend, then add milk and sugar. Or if you love brisk bold teas, drink it the traditional Irish way, keeping it plain for an invigorating stiff tea drink.`,
+      },
+      {
+        title: "ingredients",
+        content: "Blended black teas",
+      },
+      {
+        title: "steeping instructions",
+        content: `3-5 minutes at 190-209 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `Yes`,
+      },
+      {
+        title: "packaging",
+        content: `20 ct -20 tea bags in a box|Case - six 20 ct boxes`,
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeinated teas",
@@ -624,8 +804,28 @@ const teaBags = [
     id: 3949018627,
     title: "Moroccan Mint Green Tea",
     handle: "moroccan-mint-green-tea-bagged",
-    description:
-      '<p>A delightful and exotic blend of green tea and mints, with a hint of lemon. China Young Hyson green tea, spearmint and peppermint from Oregon, and freshly cut lemongrass are combined for a fragrant, refreshing, and aromatic Moroccan Mint green tea. It is a superb drink hot or iced. Try it Moroccan style, sweetened with sugar.</p>\n<p>In the bazaars of Morocco in North Africa, tea is served on a "sinya" or three-legged tray, usually made of brass, plus a smaller tray that holds three boxes, one for green tea, one for mint, and one for sugar. The tea is prepared in a samovar which brews strong, highly concentrated tea. Then it is heavily sweetened with sugar and a touch of mint. The tea is then poured into a teapot (known as a Moroccan style pot) which is elongated rather than round with a longer spout. The tea is poured from this teapot held high in the air into small crystal glasses with brass handles. Moroccans enjoy the social ritual of making this sweet flavorful tea which goes well with their hearty lamb stew, couscous, nuts, and apricots.</p>\n<p>Read about our <span style="color: #06b18e;"><strong><a href="https://www.stashtea.com/pages/mint-field-to-cup" target="_blank" title="Pacific Northwest Mint" style="color: #06b18e;" rel="noopener noreferrer"><span color="#00b38f">Pacific Northwest Mint</span></a></strong></span>.</p>\n<p><span style="color: #0bb693;"><strong><span color="#00b38f"><a href="https://www.stashtea.com/products/moroccan-mint-green-tea-loose" target="_blank" title="Moroccan Mint Green Loose Tea | Stash Tea" style="color: #0bb693;" rel="noopener noreferrer">Shop our Moroccan Mint Green Tea in loose leaf</a><a href="https://www.stashtea.com/products/moroccan-mint-green-tea-loose" title="Moroccan Mint Green Tea" style="color: #0bb693;">.</a></span></strong></span></p>\n<p><b>Ingredients</b><br>Green tea, spearmint, lemongrass, peppermint</p>\n<p><b>Steeping Instructions</b><br>1-3 minutes at 170-190 degrees Fahrenheit</p>\n<p><b>Caffeinated</b><br>Yes</p>\n<ul></ul>\n<p><b>Tea Bag Packaging</b></p>\n<ul>\n<li>20 ct - 20 tea bags in a box</li>\n<li>Case - six 20 ct boxes</li>\n<li>30 ct - 30 tea bags in a box</li>\n<li>\n<p class="p1">Case - six 30 ct boxes </p>\n</li>\n</ul>\n<h4>Recipes</h4>\n<p><strong><span style="color: #06b995;"><a href="https://www.stashtea.com/blogs/recipes/shaken-caramel-mint-tea-soda" target="_blank" title="Shaken Caramel Mint Tea Soda Recipe| Stash Tea" style="color: #06b995;" rel="noopener noreferrer">Shaken Caramel Mint Tea Soda</a></span></strong></p>',
+    accordionMenuItems: [
+      {
+        title: "product description",
+        content: `A delightful and exotic blend of green tea and mints, with a hint of lemon. China Young Hyson green tea, spearmint and peppermint from Oregon, and freshly cut lemongrass are combined for a fragrant, refreshing, and aromatic Moroccan Mint green tea. It is a superb drink hot or iced. Try it Moroccan style, sweetened with sugar.|In the bazaars of Morocco in North Africa, tea is served on a "sinya" or three-legged tray, usually made of brass, plus a smaller tray that holds three boxes, one for green tea, one for mint, and one for sugar. The tea is prepared in a samovar which brews strong, highly concentrated tea. Then it is heavily sweetened with sugar and a touch of mint. The tea is then poured into a teapot (known as a Moroccan style pot) which is elongated rather than round with a longer spout. The tea is poured from this teapot held high in the air into small crystal glasses with brass handles. Moroccans enjoy the social ritual of making this sweet flavorful tea which goes well with their hearty lamb stew, couscous, nuts, and apricots.`,
+      },
+      {
+        title: "ingredients",
+        content: "Green tea, spearmint, lemongrass, peppermint",
+      },
+      {
+        title: "steeping instructions",
+        content: `1-3 minutes at 170-190 degrees Fahrenheit`,
+      },
+      {
+        title: "caffeinated",
+        content: `Yes`,
+      },
+      {
+        title: "packaging",
+        content: `20 ct - 20 tea bags in a box|Case - six 20 ct boxes|30 ct - 30 tea bags in a box|Case - six 30 ct boxes`,
+      },
+    ],
     type: "Tea",
     tags: [
       "caffeine:caffeinated teas",
