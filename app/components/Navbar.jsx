@@ -118,9 +118,9 @@ const Navbar = () => {
             <button>
               <Image src={searchIcon} />
             </button>
-            <button>
+            <Link href={"/cart"}>
               <Image src={bagIcon} />
-            </button>
+            </Link>
           </div>
         </div>
       </nav>

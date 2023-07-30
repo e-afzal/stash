@@ -20,7 +20,7 @@ import teaware from "@/app/data/products/teaware/data";
 
 export default function Home() {
   return (
-    <body>
+    <>
       <Navbar />
       <NavbarMobile />
       <main id={styles.main}>
@@ -110,6 +110,6 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-    </body>
+    </>
   );
 }

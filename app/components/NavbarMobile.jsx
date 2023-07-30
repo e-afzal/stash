@@ -131,10 +131,10 @@ const NavbarMobile = () => {
             <Image src={accountIcon} alt="My Account Icon" />
             <p>Account</p>
           </Link>
-          <button>
+          <Link href={"/cart"}>
             <Image src={bagIcon} alt="Shopping Bag Icon" />
             <p>Cart</p>
-          </button>
+          </Link>
         </div>
         <input type="text" placeholder="What are you looking for?" />
         {/* ACCORDION */}

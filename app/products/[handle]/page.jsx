@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
 
 // STYLES
 import styles from "@/public/styles/pages/single_product/product.module.scss";
@@ -17,7 +19,11 @@ import teawareData from "@/app/data/products/teaware/data";
 import teaBagsData from "@/app/data/products/tea/tea_bag/data";
 import looseLeafData from "@/app/data/products/tea/loose_leaf/data";
 
+// ZUSTAND IMPORT
+import { useCart } from "@/app/store/useCart";
+
 const SingleProduct = ({ params }) => {
+  // FETCH PRODUCT
   const allProducts = [
     ...teaBagsData,
     ...looseLeafData,
@@ -26,8 +32,35 @@ const SingleProduct = ({ params }) => {
   ];
   const [product] = allProducts.filter((each) => each.handle === params.handle);
 
+  // STATE
+  const [quantity, setQuantity] = useState(1);
+
+  // ZUSTAND RELATED
+  const { addItemToCart } = useCart();
+
+  // HANDLERS
+  const incrementQuantity = () => {
+    if (quantity === 10) return;
+    setQuantity((prevState) => prevState + 1);
+  };
+  const decrementQuantity = () => {
+    if (quantity === 1) return;
+    setQuantity((prevState) => prevState - 1);
+  };
+
+  const addItem = () => {
+    const cartProduct = {
+      productId: product.id,
+      productImage: product.images[0],
+      productTitle: product.title,
+      productPricePerUnit: product.price / 100,
+      quantity,
+    };
+    addItemToCart(cartProduct);
+  };
+
   return (
-    <body>
+    <>
       <Navbar />
       <NavbarMobile />
       <main id={styles.main}>
@@ -44,8 +77,14 @@ const SingleProduct = ({ params }) => {
               <sup>$</sup> {product.price / 100}
             </span>
             <p className={styles.vat_inclusive}>Price incl. VAT</p>
-            <QuantityCounter />
-            <button className={styles.cart_btn}>add to bag</button>
+            <QuantityCounter
+              quantity={quantity}
+              incrementQuantity={incrementQuantity}
+              decrementQuantity={decrementQuantity}
+            />
+            <button className={styles.cart_btn} onClick={addItem}>
+              add to bag
+            </button>
           </section>
 
           {/* DETAILS */}
@@ -55,7 +94,7 @@ const SingleProduct = ({ params }) => {
         </div>
       </main>
       <Footer />
-    </body>
+    </>
   );
 };
 
