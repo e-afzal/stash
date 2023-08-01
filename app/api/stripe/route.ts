@@ -40,9 +40,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
           quantity: item.quantity,
         };
       }),
-      // success_url: `localhost:3000/success`,
-      success_url: `http://localhost:3000/confirmation?session_id={CHECKOUT_SESSION_ID}&session_status=1`,
-      cancel_url: `http://localhost:3000/cancelled`,
+      success_url: `${req.nextUrl.origin}/confirmation?session_id={CHECKOUT_SESSION_ID}&session_status=1`,
+      cancel_url: `${req.nextUrl.origin}/cancelled`,
       // cancel_url: `${new Request.headers.origin()}/cancel`,
     });
     return NextResponse.json({ session });
