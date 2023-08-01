@@ -3,8 +3,8 @@
 import Link from "next/link";
 
 // STYLES
-import styles from "@/public/styles/pages/shipping/shipping.module.scss";
 import { useEffect, useState } from "react";
+import styles from "@/public/styles/pages/shipping/shipping.module.scss";
 
 // COMPONENTS
 import Navbar from "../components/Navbar";
@@ -15,7 +15,13 @@ import Footer from "../components/Footer";
 import { useCart } from "../store/useCart";
 import { useShipping } from "../store/useShipping";
 
+// STRIPE related
+import { loadStripe } from "@stripe/stripe-js";
+
 const Shipping = () => {
+  const stripePromise = loadStripe(
+    "pk_test_51LMvKMJOhbFlN9vlVcGM5GtQqcMeXwxskHTpYavC1TeQ2P6rCRQu6MTgYLwtLNzGkxLtr3ujSI0LVdSrFzLZq08w000rjpdVMv"
+  );
   const [loadedItems, setLoadedItems] = useState(null);
   const [loadedShippingDetails, setLoadedShippingDetails] = useState(null);
   // ZUSTAND RELATED
@@ -37,6 +43,20 @@ const Shipping = () => {
     (prev, current) => prev + current.quantity * current.productPricePerUnit,
     0
   );
+
+  //? HANDLERS
+  const handlePayment = async () => {
+    const res = await fetch("/api/stripe", {
+      method: "POST",
+      body: JSON.stringify({ items: items }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    window.location.href = data.session.url;
+  };
 
   if (loadedItems && loadedShippingDetails) {
     return (
@@ -92,7 +112,7 @@ const Shipping = () => {
                   {(subTotal + 50).toFixed(2)}
                 </p>
               </div>
-              <Link href={"#"}>continue to payment</Link>
+              <button onClick={handlePayment}>continue to payment</button>
             </section>
 
             {/* RETURN BUTTON */}
