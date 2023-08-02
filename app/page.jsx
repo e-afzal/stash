@@ -12,11 +12,12 @@ import Footer from "./components/Footer";
 
 // ASSET IMPORTS
 import showcase from "@/public/images/home/showcase.png";
-import moment from "@/public/images/home/moment_cropped.webp";
-import teawareWallpaper from "@/public/images/home/teaware.webp";
+import teabags from "@/public/images/home/teabags.jpg";
+import loose from "@/public/images/home/loose_leaf.jpg";
 
 // DATA
 import teaBags from "@/app/data/products/tea/tea_bag/data";
+import loose_tea from "@/app/data/products/tea/loose_leaf/data";
 import teaware from "@/app/data/products/teaware/data";
 
 export default function Home() {
@@ -38,9 +39,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BEST SELLERS */}
+        {/* BEST SELLERS - TEABAGS */}
         <section id={styles.best_sellers}>
-          <h2 className={styles.best_title}>our best sellers</h2>
+          <h2 className={styles.best_title}>teabag top picks</h2>
           <p className={styles.best_description}>
             Warming, flavor-packed and delightfully refreshing. If you're
             looking for something from among our huge collection, the following
@@ -62,13 +63,55 @@ export default function Home() {
           </div>
         </section>
 
-        {/* MOMENT */}
-        <section id={styles.moment}>
-          <div className={styles.moment_container}>
-            <div className={styles.moment_image}>
-              <Image src={moment} alt="Loose Leaf Tea on a plate" />
+        {/* SECTION: TEABAG */}
+        <section id={styles.teabag}>
+          <div className={styles.product_container}>
+            <div className={styles.product_content}>
+              <h2>magic in every bag</h2>
+              <p>
+                Experience tea like never before with our premium teabags that
+                blend the best of convenience and flavor. Savor the enchanting
+                aromas and exceptional taste of our carefully curated teas,
+                conveniently packaged for your on-the-go lifestyle.
+              </p>
+              <Link className="cta" href={"#"}>
+                shop now
+              </Link>
             </div>
-            <div className={styles.moment_content}>
+            <div className={styles.product_image}>
+              <Image src={teabags} alt="Loose Leaf Tea on a plate" />
+            </div>
+          </div>
+        </section>
+
+        {/* BEST SELLERS - LOOSE TEA */}
+        <section id={styles.best_loose}>
+          <h2 className={styles.best_title}>loose tea leaf top picks</h2>
+          <p className={styles.best_description}>
+            Loose leaf tea offers an enchanting sensory journey. The loose,
+            whole leaves unfurl, releasing their full essence, resulting in a
+            rich and flavorful cup of tea.
+          </p>
+
+          <div className={styles.best_sellers_grid}>
+            {loose_tea.slice(0, 8).map((each, index) => (
+              <Link href={each.url} key={index} className={styles.sellers_card}>
+                <Image
+                  src={each.images[0]}
+                  alt={each.title}
+                  width={509}
+                  height={509}
+                />
+                <p>{each.title}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SECTION: LOOSE TEA  */}
+        <section id={styles.loose}>
+          <div className={styles.product_container}>
+            <div className={styles.product_content}>
               <h2>Savor the Art of Loose Leaf Tea</h2>
               <p>
                 Step into a world of unparalleled flavor and aroma with our
@@ -81,6 +124,9 @@ export default function Home() {
               <Link className="cta" href={"#"}>
                 shop now
               </Link>
+            </div>
+            <div className={styles.product_image}>
+              <Image src={loose} alt="Loose Leaf Tea" />
             </div>
           </div>
         </section>

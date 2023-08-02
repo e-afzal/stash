@@ -183,7 +183,7 @@ const looseTea = [
         weight: 0,
       },
     ],
-    images: ["/images/products/tea/loose/262971424792/1.webp"],
+    images: ["/images/products/tea/loose/262971424792/1.jpg"],
     options: [
       {
         name: "Size",
@@ -246,7 +246,7 @@ const looseTea = [
         weight: 0,
       },
     ],
-    images: ["/images/products/tea/loose/262156451864/1.webp"],
+    images: ["/images/products/tea/loose/262156451864/1.jpg"],
     options: [
       {
         name: "Size",
@@ -306,7 +306,7 @@ const looseTea = [
         weight: 0,
       },
     ],
-    images: ["/images/products/tea/loose/3949044931/1.webp"],
+    images: ["/images/products/tea/loose/3949044931/1.jpg"],
     options: [
       {
         name: "Size",
@@ -367,10 +367,7 @@ const looseTea = [
         weight: 0,
       },
     ],
-    images: [
-      "/images/products/tea/loose/262440452120/1.webp",
-      "/images/products/tea/loose/262440452120/2.webp",
-    ],
+    images: ["/images/products/tea/loose/262440452120/1.jpg"],
     options: [
       {
         name: "Size",

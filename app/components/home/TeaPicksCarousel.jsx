@@ -6,6 +6,8 @@ import Image from "next/image";
 // SWIPER
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/scrollbar";
+import { Scrollbar } from "swiper/modules";
 
 // ASSET IMPORT
 import arrow from "@/public/icons/arrow-forward.svg";
@@ -16,10 +18,8 @@ const TeaPicksCarousel = ({ picks, styles }) => {
       {/* MAIN SWIPER */}
       <Swiper
         className={styles.swiper_carousel}
-        // slidesPerView={"4.25"}
-        // centeredSlidesBounds
         centeredSlides
-        // centerInsufficientSlides={true}
+        scrollbar
         longSwipes={true}
         breakpoints={{
           320: {
@@ -31,6 +31,7 @@ const TeaPicksCarousel = ({ picks, styles }) => {
             spaceBetween: 50,
           },
         }}
+        modules={[Scrollbar]}
       >
         {picks.slice(0, 6).map((ware, index) => (
           <SwiperSlide key={index}>
