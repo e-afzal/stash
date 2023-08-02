@@ -7,12 +7,13 @@ import styles from "@/public/styles/pages/home/home.module.scss";
 // COMPONENTS
 import Navbar from "./components/Navbar";
 import NavbarMobile from "./components/NavbarMobile";
+import TeaPicksCarousel from "@/app/components/home/TeaPicksCarousel";
 import Footer from "./components/Footer";
 
 // ASSET IMPORTS
 import showcase from "@/public/images/home/showcase.png";
 import moment from "@/public/images/home/moment_cropped.webp";
-import arrow from "@/public/icons/arrow-forward.svg";
+import teawareWallpaper from "@/public/images/home/teaware.webp";
 
 // DATA
 import teaBags from "@/app/data/products/tea/tea_bag/data";
@@ -91,22 +92,14 @@ export default function Home() {
             Shop our latest inventory of teaware to make your teatime even more
             delightful.
           </p>
-          <Link href={"#"} className={styles.pick_card}>
-            <Image
-              src={teaware[0].images[0]}
-              alt={teaware[0].title}
-              height={509}
-              width={509}
-            />
-            <div className={styles.card_content}>
-              <h4>{teaware[0].title}</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Delectus natus velit eos id, quae veritatis.
-              </p>
-              <Image src={arrow} alt="Forward arrow icon" />
-            </div>
-          </Link>
+          {/* <Image
+            src={teawareWallpaper}
+            alt="Teaware Top Picks"
+            className={styles.teaware_showcase_image}
+          /> */}
+          <div className={styles.pick_card_container}>
+            <TeaPicksCarousel picks={teaware} styles={styles} />
+          </div>
         </section>
       </main>
       <Footer />
