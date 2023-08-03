@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import showcase from "@/public/images/home/showcase.png";
 import teabags from "@/public/images/home/teabags.jpg";
 import loose from "@/public/images/home/loose_leaf.jpg";
+import teawareImage from "@/public/images/home/teaware.jpg";
 
 // DATA
 import teaBags from "@/app/data/products/tea/tea_bag/data";
@@ -145,6 +146,29 @@ export default function Home() {
           /> */}
           <div className={styles.pick_card_container}>
             <TeaPicksCarousel picks={teaware} styles={styles} />
+          </div>
+        </section>
+
+        {/* TEAWARE */}
+        <section id={styles.teaware}>
+          <div className={styles.product_container}>
+            <div className={styles.product_content}>
+              <h2>The Perfect Gift for Tea Enthusiasts</h2>
+              <p>
+                Surprise a loved one or celebrate a special occasion with the
+                gift of exquisite teaware. Our collection offers a range of
+                choices that cater to both seasoned tea aficionados and those
+                embarking on their tea exploration journey. The timeless
+                elegance and practicality of our teaware make it a gift that
+                will be cherished for years to come.
+              </p>
+              <Link className="cta" href={"#"}>
+                shop now
+              </Link>
+            </div>
+            <div className={styles.product_image}>
+              <Image src={teawareImage} alt="Teaware" />
+            </div>
           </div>
         </section>
       </main>

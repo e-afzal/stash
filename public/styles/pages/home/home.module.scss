@@ -99,9 +99,10 @@ main#main {
     }
   }
 
-  // SECTION: TEABAG & LOOSE LEAF
+  // SECTION: TEABAG, LOOSE LEAF, TEAWARE
   section#teabag,
-  section#loose {
+  section#loose,
+  section#teaware {
     margin-top: 10rem;
     // background-color: #80c3ca;
     background-color: #003ea4;
@@ -172,6 +173,34 @@ main#main {
         }
         a {
           background-color: #f51da3;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  section#teaware {
+    background-color: #fff;
+    margin-block-end: 10rem;
+    .product_container {
+      .product_image {
+        img {
+          border-radius: 6.5px;
+        }
+      }
+      .product_content {
+        h2 {
+          color: #ff4d82;
+        }
+        p {
+          margin-top: 2rem;
+          font-family: "Kanit", sans-serif;
+          font-weight: 300;
+          font-size: clamp(1.6rem, 3vw, 1.8rem);
+          color: #252525;
+        }
+        a {
+          background-color: #ff4d82;
           color: #fff;
         }
       }
@@ -323,7 +352,8 @@ main#main {
     margin-top: 8rem;
 
     section#teabag,
-    section#loose {
+    section#loose,
+    section#teaware {
       background-color: #fff;
       .product_container {
         padding-inline: 0;
@@ -358,8 +388,10 @@ main#main {
         color: #fff;
       }
     }
-    section#loose .product_container .product_content h2 {
-      color: #f51da3;
+    section#loose {
+      .product_container .product_content h2 {
+        color: #f51da3;
+      }
     }
   }
 }
