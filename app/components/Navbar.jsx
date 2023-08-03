@@ -1,10 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 // STYLES
 import styles from "@/public/styles/components/navbar.module.scss";
+
+// COMPONENTS
+import SearchModal from "@/app/components/SearchModal";
 
 // ASSET IMPORT
 import logo from "@/public/images/nav_logo_white.webp";
@@ -13,6 +16,9 @@ import accountIcon from "@/public/icons/account.svg";
 import bagIcon from "@/public/icons/bag.svg";
 
 const Navbar = () => {
+  //? STATES
+  const [modalOpen, setModalOpen] = useState(false);
+
   //? REFS
   const teaDialogRef = useRef(null);
   const teawareDialogRef = useRef(null);
@@ -96,78 +102,89 @@ const Navbar = () => {
     { title: "view all", url: "#", bgdColor: "#C8A18F", textColor: "#593a2b" },
   ];
   return (
-    <header className={styles.header}>
-      <nav>
-        <div className={styles.image_container}>
-          <Link href={"/"}>
-            <Image src={logo} />
-          </Link>
-        </div>
-        <div className={styles.secondary_nav_container}>
-          <ul className={styles.nav_menu_items}>
-            {menuItems.map((each, index) => (
-              <li value={each.title} key={index} onClick={each.handler}>
-                {each.title}
-              </li>
-            ))}
-          </ul>
-          <div className={styles.icons_container}>
+    <>
+      {/* SEARCH MODAL */}
+      <SearchModal modelOpen={modalOpen} handleModalOpen={setModalOpen} />
+      {/* NAVBAR */}
+      <header className={styles.header}>
+        <nav>
+          <div className={styles.image_container}>
             <Link href={"/"}>
-              <Image src={accountIcon} />
-            </Link>
-            <button>
-              <Image src={searchIcon} />
-            </button>
-            <Link href={"/cart"}>
-              <Image src={bagIcon} />
+              <Image src={logo} />
             </Link>
           </div>
-        </div>
-      </nav>
+          <div className={styles.secondary_nav_container}>
+            <ul className={styles.nav_menu_items}>
+              {menuItems.map((each, index) => (
+                <li value={each.title} key={index} onClick={each.handler}>
+                  {each.title}
+                </li>
+              ))}
+            </ul>
+            <div className={styles.icons_container}>
+              <Link href={"/"}>
+                <Image src={accountIcon} />
+              </Link>
+              <button onClick={() => setModalOpen(true)}>
+                <Image src={searchIcon} />
+              </button>
+              <Link href={"/cart"}>
+                <Image src={bagIcon} />
+              </Link>
+            </div>
+          </div>
+        </nav>
 
-      {/* TEA DIALOG BOX */}
-      <div
-        ref={teaDialogRef}
-        className={`${styles.overlay_container} ${styles.tea_overlay_container}`}
-      >
-        <div className={styles.tea_dialog}>
-          {teaCollections.map((each, index) => (
-            <Link
-              key={index}
-              className={styles.tea_dialog_box}
-              style={{ color: each.textColor, backgroundColor: each.bgdColor }}
-              href={each.url}
-            >
-              {each.title}
-            </Link>
-          ))}
+        {/* TEA DIALOG BOX */}
+        <div
+          ref={teaDialogRef}
+          className={`${styles.overlay_container} ${styles.tea_overlay_container}`}
+        >
+          <div className={styles.tea_dialog}>
+            {teaCollections.map((each, index) => (
+              <Link
+                key={index}
+                className={styles.tea_dialog_box}
+                style={{
+                  color: each.textColor,
+                  backgroundColor: each.bgdColor,
+                }}
+                href={each.url}
+              >
+                {each.title}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* TEAWARE DIALOG BOX */}
-      <div
-        ref={teawareDialogRef}
-        className={`${styles.overlay_container} ${styles.teaware_overlay_container}`}
-      >
-        <div className={styles.teaware_dialog}>
-          {teawareCollections.map((each, index) => (
-            <Link
-              key={index}
-              className={styles.teaware_dialog_box}
-              style={{ backgroundColor: each.bgdColor, color: each.textColor }}
-              href={each.url}
-            >
-              {each.title}
-            </Link>
-          ))}
+        {/* TEAWARE DIALOG BOX */}
+        <div
+          ref={teawareDialogRef}
+          className={`${styles.overlay_container} ${styles.teaware_overlay_container}`}
+        >
+          <div className={styles.teaware_dialog}>
+            {teawareCollections.map((each, index) => (
+              <Link
+                key={index}
+                className={styles.teaware_dialog_box}
+                style={{
+                  backgroundColor: each.bgdColor,
+                  color: each.textColor,
+                }}
+                href={each.url}
+              >
+                {each.title}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* GIFT DIALOG BOX */}
-      {/* <div
+        {/* GIFT DIALOG BOX */}
+        {/* <div
         className={`${styles.overlay_container} ${styles.gift_overlay_container}`}
       ></div> */}
-    </header>
+      </header>
+    </>
   );
 };
 

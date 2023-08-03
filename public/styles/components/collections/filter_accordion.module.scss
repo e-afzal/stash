@@ -1,0 +1,54 @@
+// ACCORDION
+#accordion_container {
+  // padding-inline: 2.5rem;
+  .accordion_trigger {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 2rem;
+    text-align: left;
+    color: #000;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    padding-block: 2.5rem;
+    // border-bottom: 1px solid #dcdada;
+
+    &[data-state="open"] {
+      padding-bottom: 0px;
+    }
+  }
+
+  .accordion_content {
+    overflow: hidden;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #000;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dcdada;
+    // margin-bottom: 1.5rem;
+
+    p {
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: #151515;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+// ACCORDION RELATED
+@media screen and (max-width: 500px) {
+  header#header_mobile {
+    .menu_overlay {
+      #accordion_container {
+        .accordion_trigger {
+          line-height: 1.5;
+          padding-block: 2rem;
+        }
+      }
+    }
+  }
+}
