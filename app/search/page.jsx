@@ -52,6 +52,20 @@ const Search = () => {
     }
   };
 
+  const handleSearchMobile = () => {
+    //? This handler is created specifically for when the SEARCH button is tapped
+    //? in MOBILE.
+    //! The "press enter" to search functionality works only on DESKTOP
+    //! and NOT on Mobile/Tablet
+    setSearchTerm(searchTerm.toLowerCase());
+    setData(
+      allProducts.filter((product) => {
+        if (product.title.toLowerCase().includes(searchTerm.toLowerCase()))
+          return { product };
+      })
+    );
+  };
+
   return (
     <>
       <Navbar />
@@ -64,6 +78,9 @@ const Search = () => {
             placeholder="Type product name or flavor"
             onKeyDown={handleSearch}
           />
+          <button className={styles.search_button} onClick={handleSearchMobile}>
+            search
+          </button>
 
           <div className={styles.results_container}>
             <h4 className={styles.results_count}>

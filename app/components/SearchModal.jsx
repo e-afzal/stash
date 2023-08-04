@@ -21,6 +21,7 @@ const SearchModal = ({ modelOpen, handleModalOpen }) => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  // HANDLERS
   const handleSearch = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
     if (e.key === "Enter") {
@@ -36,6 +37,10 @@ const SearchModal = ({ modelOpen, handleModalOpen }) => {
   };
 
   const handleSearchMobile = () => {
+    //? This handler is created specifically for when the SEARCH button is tapped
+    //? in MOBILE.
+    //! The "press enter" to search functionality works only on DESKTOP
+    //! and NOT on Mobile/Tablet
     setSearchTerm(searchTerm.toLowerCase());
     setData(
       allProducts.filter((product) => {
