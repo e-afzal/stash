@@ -60,7 +60,7 @@ const SearchModal = ({ modelOpen, handleModalOpen }) => {
             </h4>
             <a
               style={{ display: data.length > 4 ? "inline-block" : "none" }}
-              href={`${process.env.NEXT_PUBLIC_BASE_URL}/search?term=${searchTerm}`}
+              href={`/search?term=${searchTerm}`}
             >
               view all results
             </a>
