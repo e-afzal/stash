@@ -13,10 +13,12 @@ import logo from "@/public/images/nav_logo_white.webp";
 import menu from "@/public/icons/menu.svg";
 import accountIcon from "@/public/icons/account_mobile.svg";
 import bagIcon from "@/public/icons/bag_mobile.svg";
+import searchIcon from "@/public/icons/search_mobile.svg";
 import facebook from "@/public/icons/facebook.svg";
 import instagram from "@/public/icons/instagram.svg";
 import twitter from "@/public/icons/twitter.svg";
 import youtube from "@/public/icons/youtube.svg";
+import SearchModal from "./SearchModal";
 
 const NavbarMobile = () => {
   //? DOM ELEMENTS
@@ -95,6 +97,7 @@ const NavbarMobile = () => {
 
   //? STATE
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   //? HANDLERS
   const handleMenu = () => {
@@ -102,74 +105,87 @@ const NavbarMobile = () => {
     if (menuOpen) setMenuOpen(false);
   };
 
+  const handleModalOpen = () => {
+    setMenuOpen(false);
+    setModalOpen(true);
+  };
+
   return (
-    <header id={styles.header_mobile}>
-      <nav className={styles.nav_mobile}>
-        <Link href={"/"} className={styles.logo_link}>
+    <>
+      {/* SEARCH MODAL */}
+      <SearchModal modelOpen={modalOpen} handleModalOpen={setModalOpen} />
+      <header id={styles.header_mobile}>
+        <nav className={styles.nav_mobile}>
+          <Link href={"/"} className={styles.logo_link}>
+            <Image
+              src={logo}
+              alt="Stash Brand Logo"
+              className={styles.nav_mobile_logo}
+            />
+          </Link>
+
           <Image
-            src={logo}
-            alt="Stash Brand Logo"
-            className={styles.nav_mobile_logo}
+            onClick={handleMenu}
+            src={menu}
+            alt="Navbar Hamburger Icon"
+            className={styles.nav_mobile_menu_icon}
           />
-        </Link>
+        </nav>
 
-        <Image
-          onClick={handleMenu}
-          src={menu}
-          alt="Navbar Hamburger Icon"
-          className={styles.nav_mobile_menu_icon}
-        />
-      </nav>
-
-      {/* MENU OVERLAY */}
-      <div
-        className={styles.menu_overlay}
-        style={{ display: menuOpen ? "block" : "none" }}
-      >
-        <div className={styles.icons_container}>
-          <Link href={"/"}>
-            <Image src={accountIcon} alt="My Account Icon" />
-            <p>Account</p>
-          </Link>
-          <Link href={"/cart"}>
-            <Image src={bagIcon} alt="Shopping Bag Icon" />
-            <p>Cart</p>
-          </Link>
-        </div>
-        <input type="text" placeholder="What are you looking for?" />
-        {/* ACCORDION */}
-        {menuItems.map((each, index) => (
-          <Accordion.Root
-            id={styles.accordion_container}
-            collapsible
-            key={index}
-          >
-            <Accordion.Item value={`item${index}`}>
-              <Accordion.Header>
-                <Accordion.Trigger className={styles.accordion_trigger}>
-                  {each.title}
-                </Accordion.Trigger>
-                <Accordion.Content className={styles.accordion_content}>
-                  {each.collections.map((each, index) => (
-                    <Link key={index} href={each.url}>
-                      {each.title}
-                    </Link>
-                  ))}
-                </Accordion.Content>
-              </Accordion.Header>
-            </Accordion.Item>
-          </Accordion.Root>
-        ))}
-
-        <div className={styles.social_icons}>
-          {socialIcons.map((each, index) => (
-            <Link key={index} href={each.url} target="_blank">
-              <Image src={each.icon} alt="Icon" />
+        {/* MENU OVERLAY */}
+        <div
+          className={styles.menu_overlay}
+          style={{ display: menuOpen ? "block" : "none" }}
+        >
+          <div className={styles.icons_container}>
+            <Link href={"/"}>
+              <Image src={accountIcon} alt="My Account Icon" />
+              <p>Account</p>
             </Link>
+            <Link href={"/cart"}>
+              <Image src={bagIcon} alt="Shopping Bag Icon" />
+              <p>Cart</p>
+            </Link>
+            <button onClick={handleModalOpen}>
+              <Image src={searchIcon} />
+              <p>Search</p>
+            </button>
+          </div>
+          {/* <input type="text" placeholder="What are you looking for?" /> */}
+          {/* ACCORDION */}
+          {menuItems.map((each, index) => (
+            <Accordion.Root
+              id={styles.accordion_container}
+              collapsible
+              key={index}
+            >
+              <Accordion.Item value={`item${index}`}>
+                <Accordion.Header>
+                  <Accordion.Trigger className={styles.accordion_trigger}>
+                    {each.title}
+                  </Accordion.Trigger>
+                  <Accordion.Content className={styles.accordion_content}>
+                    {each.collections.map((each, index) => (
+                      <Link key={index} href={each.url}>
+                        {each.title}
+                      </Link>
+                    ))}
+                  </Accordion.Content>
+                </Accordion.Header>
+              </Accordion.Item>
+            </Accordion.Root>
           ))}
+
+          <div className={styles.social_icons}>
+            {socialIcons.map((each, index) => (
+              <Link key={index} href={each.url} target="_blank">
+                <Image src={each.icon} alt="Icon" />
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
