@@ -11,7 +11,8 @@ import TeaPicksCarousel from "@/app/components/home/TeaPicksCarousel";
 import Footer from "./components/Footer";
 
 // ASSET IMPORTS
-import showcase from "@/public/images/home/showcase.png";
+import showcase_desktop from "@/public/images/home/showcase.png";
+import showcase_mobile from "@/public/images/home/showcase_mobile.jpg";
 import teabags from "@/public/images/home/teabags.jpg";
 import loose from "@/public/images/home/loose_leaf.jpg";
 import teawareImage from "@/public/images/home/teaware.jpg";
@@ -29,7 +30,18 @@ export default function Home() {
       <main id={styles.main}>
         {/* SECTION: SHOWCASE */}
         <section id={styles.showcase}>
-          <Image src={showcase} alt="Japanese Shincha Green Tea " />
+          <Image
+            className={styles.showcase_desktop}
+            src={showcase_desktop}
+            alt="Japanese Shincha Green Tea"
+          />
+          <Link href={"/products/japanese-shincha-green-tea"}>
+            <Image
+              className={styles.showcase_mobile}
+              src={showcase_mobile}
+              alt="Japanese Shincha Green Tea"
+            />
+          </Link>
           <div className={styles.showcase_content}>
             <h2>japanese shincha</h2>
             <p>

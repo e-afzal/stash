@@ -4,12 +4,19 @@ main#main {
   // SECTION:SHOWCASE
   section#showcase {
     position: relative;
-    height: 630px;
-    img {
+    // height: 630px;
+    overflow: hidden;
+    img.showcase_desktop {
       position: absolute;
       top: 0;
       object-fit: cover;
       height: 100%;
+      width: 100%;
+    }
+    img.showcase_mobile {
+      display: none;
+      object-fit: cover;
+      height: auto;
       width: 100%;
     }
     .showcase_content {
@@ -52,7 +59,7 @@ main#main {
 
   // SECTION: BEST SELLERS - TEABAG
   section#best_sellers {
-    margin-top: clamp(10rem, 8.5vw, 15rem);
+    margin-top: clamp(5rem, 8.5vw, 15rem);
     max-width: 1095px;
     margin-inline: auto;
     padding-inline: clamp(2.5rem, 8.5vw, 7rem);
@@ -392,6 +399,24 @@ main#main {
     section#loose {
       .product_container .product_content h2 {
         color: #f51da3;
+      }
+    }
+  }
+}
+
+// MEDIA QUERY - SHOWCASE MOBILE
+@media screen and (max-width: 1080px) {
+  main#main {
+    section#showcase {
+      height: min-content;
+      img.showcase_desktop {
+        display: none;
+      }
+      img.showcase_mobile {
+        display: block;
+      }
+      .showcase_content {
+        display: none;
       }
     }
   }
