@@ -63,12 +63,13 @@ section#search {
         color: #111;
         font-family: "Kanit", sans-serif;
         font-weight: 400;
+        max-width: 250px;
       }
       .results_box {
         margin-inline: auto;
         max-width: 1095px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
         column-gap: 1.5rem;
         row-gap: 7rem;
         justify-content: center;
@@ -129,6 +130,18 @@ section#search {
               margin-inline: auto;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section#search {
+    .search_container {
+      .results_container {
+        .results_box {
+          justify-items: center;
         }
       }
     }

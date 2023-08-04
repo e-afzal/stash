@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 // STYLES
 import styles from "@/public/styles/pages/search/search.module.scss";
@@ -11,8 +15,43 @@ import Footer from "../components/Footer";
 
 // DATA
 import teaBags from "@/app/data/products/tea/tea_bag/data";
+import looseTea from "../data/products/tea/loose_leaf/data";
+import gifts from "../data/products/gifts/data";
+import teaware from "../data/products/teaware/data";
 
 const Search = () => {
+  const allProducts = [...teaBags, ...looseTea, ...gifts, ...teaware];
+  const searchParams = useSearchParams();
+  const query = searchParams.get("term");
+
+  // STATES
+  const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    setData(
+      allProducts.filter((product) => {
+        if (product.title.toLowerCase().includes(query.toLowerCase()))
+          return { product };
+      })
+    );
+  }, []);
+
+  // HANDLERS
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value.toLowerCase());
+    if (e.key === "Enter") {
+      setData(
+        allProducts.filter((product) => {
+          if (
+            product.title.toLowerCase().includes(e.target.value.toLowerCase())
+          )
+            return { product };
+        })
+      );
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -20,12 +59,18 @@ const Search = () => {
       <main id={styles.main}>
         <div className={styles.search_container}>
           <h2 className={styles.search_title}>search our store</h2>
-          <input type="text" placeholder="Type product name or id" />
+          <input
+            type="text"
+            placeholder="Type product name or flavor"
+            onKeyDown={handleSearch}
+          />
 
           <div className={styles.results_container}>
-            <h4 className={styles.results_count}>Results found: 3</h4>
+            <h4 className={styles.results_count}>
+              Results found: {data.length}
+            </h4>
             <div className={styles.results_box}>
-              {teaBags.slice(0, 4).map((each, index) => (
+              {data.map((each, index) => (
                 <Link
                   href={each.url}
                   key={index}

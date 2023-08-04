@@ -53,7 +53,7 @@ main#main {
   // SECTION: BEST SELLERS - TEABAG
   section#best_sellers {
     margin-top: clamp(10rem, 8.5vw, 15rem);
-    max-width: 1170px;
+    max-width: 1095px;
     margin-inline: auto;
     padding-inline: clamp(2.5rem, 8.5vw, 7rem);
     h2.best_title {
@@ -79,7 +79,8 @@ main#main {
       margin-top: 5rem;
       display: grid;
       justify-content: center;
-      grid-template-columns: repeat(auto-fit, minmax(273px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+      column-gap: 1.5rem;
       row-gap: 5rem;
       a.sellers_card {
         img {
@@ -90,9 +91,9 @@ main#main {
           margin-top: 2rem;
           font-family: "Kanit", sans-serif;
           font-weight: 300;
-          color: #2f2f2f;
+          color: #000;
           text-transform: capitalize;
-          font-size: clamp(1.7rem, 3vw, 2rem);
+          font-size: 1.6rem;
           text-align: center;
         }
       }
@@ -210,7 +211,7 @@ main#main {
   // SECTION: BEST SELLERS - LOOSE TEA
   section#best_loose {
     margin-top: 10rem;
-    max-width: 1170px;
+    max-width: 1095px;
     margin-inline: auto;
     padding-inline: clamp(2.5rem, 8.5vw, 7rem);
     h2.best_title {
@@ -237,7 +238,7 @@ main#main {
       display: grid;
       justify-content: center;
       grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-      column-gap: 2.5rem;
+      column-gap: 1.5rem;
       row-gap: 5rem;
       a.sellers_card {
         img {
@@ -396,7 +397,7 @@ main#main {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 850px) {
   main#main {
     section#best_sellers,
     section#best_loose {
@@ -411,6 +412,7 @@ main#main {
         }
       }
     }
+
     section#top_picks {
       .pick_card_container {
         .swiper_carousel {

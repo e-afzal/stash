@@ -44,7 +44,7 @@ main#main {
         margin-inline: auto;
         max-width: 1095px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
         column-gap: 1.5rem;
         row-gap: 7rem;
         justify-content: center;
@@ -90,11 +90,6 @@ main#main {
 @media screen and (max-width: 811px) {
   main#main {
     margin-top: calc(8rem + 5rem);
-
-    .cart_container {
-      grid-template-columns: 1fr;
-      row-gap: 5rem;
-    }
   }
 }
 
@@ -111,6 +106,18 @@ main#main {
               margin-inline: auto;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main#main {
+    .search_container {
+      .results_container {
+        .results_box {
+          justify-items: center;
         }
       }
     }

@@ -19,9 +19,7 @@ import { useShipping } from "../store/useShipping";
 import { loadStripe } from "@stripe/stripe-js";
 
 const Shipping = () => {
-  const stripePromise = loadStripe(
-    "pk_test_51LMvKMJOhbFlN9vlVcGM5GtQqcMeXwxskHTpYavC1TeQ2P6rCRQu6MTgYLwtLNzGkxLtr3ujSI0LVdSrFzLZq08w000rjpdVMv"
-  );
+  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
   const [loadedItems, setLoadedItems] = useState(null);
   const [loadedShippingDetails, setLoadedShippingDetails] = useState(null);
   // ZUSTAND RELATED
