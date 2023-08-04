@@ -35,6 +35,16 @@ const SearchModal = ({ modelOpen, handleModalOpen }) => {
     }
   };
 
+  const handleSearchMobile = () => {
+    setSearchTerm(searchTerm.toLowerCase());
+    setData(
+      allProducts.filter((product) => {
+        if (product.title.toLowerCase().includes(searchTerm.toLowerCase()))
+          return { product };
+      })
+    );
+  };
+
   return (
     <section
       style={{ display: modelOpen ? "block" : "none" }}
@@ -51,7 +61,11 @@ const SearchModal = ({ modelOpen, handleModalOpen }) => {
           type="text"
           placeholder="Type product name or flavor"
           onKeyDown={handleSearch}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
+        <button className={styles.search_button} onClick={handleSearchMobile}>
+          search
+        </button>
 
         <div className={styles.results_container}>
           <div className={styles.results_count_container}>
