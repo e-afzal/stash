@@ -7,6 +7,7 @@ import styles from "@/public/styles/components/collections/filter_overlay.module
 import cancelIcon from "@/public/icons/close.svg";
 
 const FilterOverlay = ({
+  category,
   modalOpen,
   setModalOpen,
   typeFiltersParams,
@@ -41,50 +42,72 @@ const FilterOverlay = ({
   };
 
   const handleFilteredData = () => {
-    // Criterias based on which items will be filtered: "type","caffeine","packaging"
-    // For teaware, only criteria is 'subtype'
-    const filterTeaType = data.filter((product) =>
-      filters.type.includes(product.teaType)
-    );
-    const filterCaffeine = data.filter((product) =>
-      filters.caffeine.includes(product.caffeine)
-    );
-    const filterPackaging = data.filter((product) =>
-      filters.packaging.includes(product.packaging)
-    );
-    //! REMOVE any DUPLICATES and return results that fit any of the three criterias
-    const allResults = [
-      ...filterTeaType,
-      ...filterCaffeine,
-      ...filterPackaging,
-    ];
-    const uniqueIds = new Set();
-    const uniqueArray = allResults.filter((element) => {
-      const isDuplicate = uniqueIds.has(element.id);
-      uniqueIds.add(element.id);
-      if (!isDuplicate) return true;
+    if (category === "teaware") {
+      setFinalData(
+        data
+          .filter((product) => filters.subtype.includes(product.subtype))
+          .sort((a, b) => {
+            if (sort === "Price (Ascending)") {
+              return a.price > b.price;
+            }
+            if (sort === "Price (Descending)") {
+              return b.price > a.price;
+            }
+            if (sort === "Alphabetical (A-Z)") {
+              return a.title.localeCompare(b.title);
+            }
+            if (sort === "Alphabetical (Z-A)") {
+              return b.title.localeCompare(a.title);
+            }
+          })
+      );
+    }
+    if (category === "tea") {
+      // Criterias based on which items will be filtered: "type","caffeine","packaging"
+      // For teaware, only criteria is 'subtype'
+      const filterTeaType = data.filter((product) =>
+        filters.type.includes(product.teaType)
+      );
+      const filterCaffeine = data.filter((product) =>
+        filters.caffeine.includes(product.caffeine)
+      );
+      const filterPackaging = data.filter((product) =>
+        filters.packaging.includes(product.packaging)
+      );
+      //! REMOVE any DUPLICATES and return results that fit any of the three criterias
+      const allResults = [
+        ...filterTeaType,
+        ...filterCaffeine,
+        ...filterPackaging,
+      ];
+      const uniqueIds = new Set();
+      const uniqueArray = allResults.filter((element) => {
+        const isDuplicate = uniqueIds.has(element.id);
+        uniqueIds.add(element.id);
+        if (!isDuplicate) return true;
 
-      return false;
-    });
-    setFinalData(
-      uniqueArray.sort((a, b) => {
-        if (sort === "Price (Ascending)") {
-          return a.price > b.price;
-        }
-        if (sort === "Price (Descending)") {
-          return b.price > a.price;
-        }
-        if (sort === "Alphabetical (A-Z)") {
-          return a.title.localeCompare(b.title);
-        }
-        if (sort === "Alphabetical (Z-A)") {
-          return b.title.localeCompare(a.title);
-        }
-      })
-    );
+        return false;
+      });
+      setFinalData(
+        uniqueArray.sort((a, b) => {
+          if (sort === "Price (Ascending)") {
+            return a.price > b.price;
+          }
+          if (sort === "Price (Descending)") {
+            return b.price > a.price;
+          }
+          if (sort === "Alphabetical (A-Z)") {
+            return a.title.localeCompare(b.title);
+          }
+          if (sort === "Alphabetical (Z-A)") {
+            return b.title.localeCompare(a.title);
+          }
+        })
+      );
+    }
     setModalOpen(false);
   };
-  console.log(sort);
+
   return (
     <div
       className={styles.filter_overlay_container}

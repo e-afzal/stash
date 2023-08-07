@@ -34,6 +34,7 @@ const Collections = ({ params: { category } }) => {
     type: [],
     caffeine: [],
     packaging: [],
+    subtype: [],
   });
   const [sort, setSort] = useState("Price (Ascending)");
   const [typeFiltersParams, setTypeFiltersParams] = useState({});
@@ -159,9 +160,10 @@ const Collections = ({ params: { category } }) => {
                     />
                   </div>
                   <div className={styles.card_content}>
-                    <h4>{each.title}</h4>
+                    <div className={styles.title_test}>{each.title}</div>
+                    {/* <h4>{each.title}</h4> */}
                     <span className={styles.product_price}>
-                      <sup>$</sup> {each.price / 100}
+                      <sup>$</sup> {(each.price / 100).toFixed(2)}
                     </span>
                   </div>
                 </Link>
@@ -170,6 +172,7 @@ const Collections = ({ params: { category } }) => {
 
             {/* FILTER OVERLAY */}
             <FilterOverlay
+              category={category}
               modalOpen={filterModal}
               setModalOpen={setFilterModal}
               typeFiltersParams={typeFiltersParams}

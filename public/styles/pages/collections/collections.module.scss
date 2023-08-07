@@ -13,6 +13,7 @@ main#main {
       justify-content: space-between;
       align-items: flex-end;
       border-bottom: 1px solid #dfdfdf;
+
       h2.category_title {
         font-family: "Kanit", sans-serif;
         font-weight: 400;
@@ -79,7 +80,13 @@ main#main {
           flex-direction: column;
           align-items: center;
           row-gap: 9px;
-          h4 {
+          div.title_test {
+            width: 95%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-bottom: 5px;
+
             text-align: center;
             font-family: "Kanit", sans-serif;
             font-weight: 300;
@@ -88,6 +95,15 @@ main#main {
             font-size: 1.6rem;
             margin-top: 1rem;
           }
+          // h4 {
+          //   text-align: center;
+          //   font-family: "Kanit", sans-serif;
+          //   font-weight: 300;
+          //   color: #000;
+          //   text-transform: capitalize;
+          //   font-size: 1.6rem;
+          //   margin-top: 1rem;
+          // }
           span.product_price {
             font-family: "Kanit", sans-serif;
             font-weight: 400;
