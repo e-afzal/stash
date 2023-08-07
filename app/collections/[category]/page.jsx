@@ -33,8 +33,8 @@ const Collections = ({ params: { category } }) => {
   const [filters, setFilters] = useState({
     type: [],
     caffeine: [],
-    packaging: [],
-    subtype: [],
+    packaging: ["tea bag", "loose leaf"],
+    subtype: ["honey accessories"],
   });
   const [sort, setSort] = useState("Price (Ascending)");
   const [typeFiltersParams, setTypeFiltersParams] = useState({});
@@ -50,15 +50,15 @@ const Collections = ({ params: { category } }) => {
     {
       filterName: "teaware",
       subtype: [
-        "tea presses",
-        "infusers & strainers",
+        "baked goods",
+        "canisters & tins",
         "cups & mugs",
         "honey accessories",
+        "infusers & strainers",
+        "tea chests",
+        "tea presses",
         "teapots",
         "tea sets",
-        "tea chests",
-        "canisters & tins",
-        "baked goods",
       ],
     },
   ];

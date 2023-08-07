@@ -105,6 +105,16 @@ const FilterOverlay = ({
         })
       );
     }
+    //* If NO filter selected, just show the original DATA
+    if (
+      (!filters.type.length &&
+        !filters.caffeine.length &&
+        !filters.packaging.length) ||
+      !filters.subtype.length
+    ) {
+      setFinalData(data);
+    }
+
     setModalOpen(false);
   };
 
@@ -161,9 +171,9 @@ const FilterOverlay = ({
                     <input
                       value={each}
                       type="checkbox"
-                      name="type"
+                      name="subtype"
                       id={each}
-                      defaultChecked={filters.type.includes(each)}
+                      defaultChecked={filters.subtype.includes(each)}
                       onChange={handleChange}
                     />
                     <label htmlFor={each}>{each}</label>
