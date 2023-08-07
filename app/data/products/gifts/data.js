@@ -16,7 +16,8 @@ const gifts = [
       { title: "Care Instructions", content: "Dishwasher and microwave safe." },
       { title: "Country of Origin", content: "China" },
     ],
-    type: "Teaware",
+    type: "teaware",
+    subtype: "cups & mugs",
     tags: [
       "accessories:with gift box",
       "is-gift",
@@ -63,7 +64,8 @@ const gifts = [
         content: `Ingredients: all-natural|Contains: Egg, Milk, Wheat. NOTE: Manufactured on Shared Equipment that processes Peanuts, Sesame Seed, Soy, and Tree Nuts.|Cookies made in the USA|9 oz box`,
       },
     ],
-    type: "Gift Item",
+    type: "gift",
+    subtype: "baked goods",
     tags: [
       "is-new",
       "style:made in the USA",

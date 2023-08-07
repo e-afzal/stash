@@ -61,6 +61,24 @@
 
       .filters_container {
         padding-inline: 2.5rem;
+        .filter_container {
+          h3 {
+            font-family: "Kanit", sans-serif;
+            font-weight: 400;
+            text-transform: capitalize;
+            font-size: 2rem;
+            color: #000;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+          }
+          label {
+            margin-left: 1rem;
+            font-family: "Kanit", sans-serif;
+            font-weight: 300;
+            font-size: 1.6rem;
+            color: #000;
+          }
+        }
       }
     }
     .bottom_section {
