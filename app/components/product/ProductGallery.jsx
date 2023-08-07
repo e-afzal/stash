@@ -26,7 +26,7 @@ const ProductGallery = ({ images }) => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className={styles.swiper_slide}>
-            <Image src={image} alt="image" width={509} height={509} />
+            <Image src={image} alt="Product Image" width={509} height={509} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -42,7 +42,7 @@ const ProductGallery = ({ images }) => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className={styles.swiper_slide}>
-            <Image src={image} alt="thumbnail" width={75} height={75} />
+            <Image src={image} alt="Product Thumbnail" width={75} height={75} />
           </SwiperSlide>
         ))}
       </Swiper>

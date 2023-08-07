@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useRef } from "react";
 
 // STYLES
 import styles from "@/public/styles/components/collections/filter_overlay.module.scss";
@@ -14,11 +13,9 @@ const FilterOverlay = ({
   filters,
   setFilters,
   data,
-  finalData,
   setFinalData,
+  sort,
 }) => {
-  //? REFs
-  const inputRef = useRef(null);
   //? HANDLERS
   const handleChange = (e) => {
     //!Remove checkbox item (checked item), if already in array
@@ -46,13 +43,6 @@ const FilterOverlay = ({
   const handleFilteredData = () => {
     // Criterias based on which items will be filtered: "type","caffeine","packaging"
     // For teaware, only criteria is 'subtype'
-    // const filteration = data.filter((product) => {
-    //   const includesTeaType = filters.type.includes(product.teaType);
-    //   const includesCaffeine = filters.caffeine.includes(product.caffeine);
-    //   const includesPackaging = filters.packaging.includes(product.packaging);
-    //   if (includesTeaType && includesCaffeine && includesPackaging)
-    //     return product;
-    // });
     const filterTeaType = data.filter((product) =>
       filters.type.includes(product.teaType)
     );
@@ -62,6 +52,7 @@ const FilterOverlay = ({
     const filterPackaging = data.filter((product) =>
       filters.packaging.includes(product.packaging)
     );
+    //! REMOVE any DUPLICATES and return results that fit any of the three criterias
     const allResults = [
       ...filterTeaType,
       ...filterCaffeine,
@@ -70,30 +61,30 @@ const FilterOverlay = ({
     const uniqueIds = new Set();
     const uniqueArray = allResults.filter((element) => {
       const isDuplicate = uniqueIds.has(element.id);
-
       uniqueIds.add(element.id);
-
-      if (!isDuplicate) {
-        return true;
-      }
+      if (!isDuplicate) return true;
 
       return false;
     });
-    // const uniqueArray = allResults.filter((obj, index) => {
-    //   return index === allResults.findIndex((o) => obj.id === o.id);
-    // });
-    setFinalData(uniqueArray);
+    setFinalData(
+      uniqueArray.sort((a, b) => {
+        if (sort === "Price (Ascending)") {
+          return a.price > b.price;
+        }
+        if (sort === "Price (Descending)") {
+          return b.price > a.price;
+        }
+        if (sort === "Alphabetical (A-Z)") {
+          return a.title.localeCompare(b.title);
+        }
+        if (sort === "Alphabetical (Z-A)") {
+          return b.title.localeCompare(a.title);
+        }
+      })
+    );
     setModalOpen(false);
   };
-
-  const handleResetData = () => {
-    // RELOAD ENTIRE PAGE to set everything to DEFAULT as was
-    window.location.reload();
-  };
-
-  console.log(filters);
-  console.log(finalData.length);
-
+  console.log(sort);
   return (
     <div
       className={styles.filter_overlay_container}
@@ -114,7 +105,7 @@ const FilterOverlay = ({
               className={styles.close_btn}
               onClick={() => setModalOpen(false)}
             >
-              <Image src={cancelIcon} />
+              <Image src={cancelIcon} alt="Close Icon" />
             </button>
           </div>
           <div className={styles.filters_container}>
@@ -131,7 +122,6 @@ const FilterOverlay = ({
                       id={each}
                       defaultChecked={filters.type.includes(each)}
                       onChange={handleChange}
-                      ref={inputRef}
                     />
                     <label htmlFor={each}>{each}</label>
                   </div>
@@ -205,7 +195,10 @@ const FilterOverlay = ({
             <button className={styles.view_btn} onClick={handleFilteredData}>
               view
             </button>
-            <button className={styles.clear_btn} onClick={handleResetData}>
+            <button
+              className={styles.clear_btn}
+              onClick={() => window.location.reload()}
+            >
               clear all
             </button>
           </div>

@@ -147,7 +147,7 @@ const NavbarMobile = () => {
               <p>Cart</p>
             </Link>
             <button onClick={handleModalOpen}>
-              <Image src={searchIcon} />
+              <Image src={searchIcon} alt="Search Icon" />
               <p>Search</p>
             </button>
           </div>
@@ -179,7 +179,7 @@ const NavbarMobile = () => {
           <div className={styles.social_icons}>
             {socialIcons.map((each, index) => (
               <Link key={index} href={each.url} target="_blank">
-                <Image src={each.icon} alt="Icon" />
+                <Image src={each.icon} alt="Social Media Icon" />
               </Link>
             ))}
           </div>

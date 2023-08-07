@@ -72,7 +72,12 @@ const Cart = () => {
               {loadedItems?.map((item, index) => (
                 <div key={index} className={styles.item_card}>
                   <div className={styles.item_image}>
-                    <Image src={item.productImage} width={130} height={130} />
+                    <Image
+                      src={item.productImage}
+                      width={130}
+                      height={130}
+                      alt={`${item.productTitle} image thumbnail`}
+                    />
                   </div>
                   <div className={styles.item_content}>
                     <p className={styles.item_title}>{item.productTitle}</p>

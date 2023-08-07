@@ -35,6 +35,7 @@ const Collections = ({ params: { category } }) => {
     caffeine: [],
     packaging: [],
   });
+  const [sort, setSort] = useState("Price (Ascending)");
   const [typeFiltersParams, setTypeFiltersParams] = useState({});
 
   //! FILTER PARAMETERS
@@ -71,9 +72,24 @@ const Collections = ({ params: { category } }) => {
     //! Set data based on category from URL
     const filtered = allProducts.filter((product) => product.type === category);
     setData(filtered);
-    setFinalData(filtered);
+    setFinalData(
+      filtered.sort((a, b) => {
+        if (sort === "Price (Ascending)") {
+          return a.price > b.price;
+        }
+        if (sort === "Price (Descending)") {
+          return b.price > a.price;
+        }
+        if (sort === "Alphabetical (A-Z)") {
+          return a.title.localeCompare(b.title);
+        }
+        if (sort === "Alphabetical (Z-A)") {
+          return b.title.localeCompare(a.title);
+        }
+      })
+    );
     setIsLoading(false);
-  }, []);
+  }, [sort]);
 
   if (!isLoading && finalData) {
     return (
@@ -91,9 +107,29 @@ const Collections = ({ params: { category } }) => {
                     <option value="Sort" disabled>
                       Sort
                     </option>
-                    <option value="Price (Ascending)">Price (Ascending)</option>
-                    <option value="Price (Descending)">
+                    <option
+                      value="Price (Ascending)"
+                      onClick={(e) => setSort(e.target.value)}
+                    >
+                      Price (Ascending)
+                    </option>
+                    <option
+                      value="Price (Descending)"
+                      onClick={(e) => setSort(e.target.value)}
+                    >
                       Price (Descending)
+                    </option>
+                    <option
+                      value="Alphabetical (A-Z)"
+                      onClick={(e) => setSort(e.target.value)}
+                    >
+                      Alphabetical (A-Z)
+                    </option>
+                    <option
+                      value="Alphabetical (Z-A)"
+                      onClick={(e) => setSort(e.target.value)}
+                    >
+                      Alphabetical (Z-A)
                     </option>
                   </select>
                 </div>
@@ -140,8 +176,8 @@ const Collections = ({ params: { category } }) => {
               filters={filters}
               setFilters={setFilters}
               data={data}
-              finalData={finalData}
               setFinalData={setFinalData}
+              sort={sort}
             />
           </div>
         </main>

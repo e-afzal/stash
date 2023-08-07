@@ -88,6 +88,7 @@ const Confirmation = () => {
                         }
                         width={130}
                         height={130}
+                        alt={`${item.description} thumbnail`}
                       />
                     </div>
                     <div className={styles.item_content}>

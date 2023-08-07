@@ -110,7 +110,7 @@ const Navbar = () => {
         <nav>
           <div className={styles.image_container}>
             <Link href={"/"}>
-              <Image src={logo} />
+              <Image src={logo} alt="Stash Logo" />
             </Link>
           </div>
           <div className={styles.secondary_nav_container}>
@@ -123,13 +123,13 @@ const Navbar = () => {
             </ul>
             <div className={styles.icons_container}>
               <Link href={"/"}>
-                <Image src={accountIcon} />
+                <Image src={accountIcon} alt="My Account icon" />
               </Link>
               <button onClick={() => setModalOpen(true)}>
-                <Image src={searchIcon} />
+                <Image src={searchIcon} alt="Search Icon" />
               </button>
               <Link href={"/cart"}>
-                <Image src={bagIcon} />
+                <Image src={bagIcon} alt="Shopping Bag Logo" />
               </Link>
             </div>
           </div>

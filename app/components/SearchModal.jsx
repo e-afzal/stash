@@ -59,6 +59,7 @@ const SearchModal = ({ modelOpen, handleModalOpen }) => {
         src={cancelIcon}
         className={styles.cancelIcon}
         onClick={() => handleModalOpen(false)}
+        alt="Close Icon"
       />
       <div className={styles.search_container}>
         <h2 className={styles.search_title}>search our store</h2>
