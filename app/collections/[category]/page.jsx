@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 // STYLES
 import styles from "@/public/styles/pages/collections/collections.module.scss";
@@ -23,6 +24,10 @@ const Collections = ({ params: { category } }) => {
   // PRODUCTS
   const allProducts = [...teaBags, ...looseTea, ...teaware, ...gifts];
 
+  //? Get QUERY PARAMS
+  const searchParams = useSearchParams();
+  const queryParamType = searchParams.get("type");
+
   // STATES
   const [filterModal, setFilterModal] = useState(false);
   //! Original DATA to leave untouched
@@ -31,9 +36,9 @@ const Collections = ({ params: { category } }) => {
   const [isLoading, setIsLoading] = useState(true);
   //? Default Filters [Checkboxes are checked based on below values]
   const [filters, setFilters] = useState({
-    type: [],
+    type: [queryParamType],
     caffeine: [],
-    packaging: ["tea bag", "loose leaf"],
+    packaging: [queryParamType],
     subtype: ["honey accessories"],
   });
   const [sort, setSort] = useState("Price (Ascending)");
@@ -72,6 +77,7 @@ const Collections = ({ params: { category } }) => {
 
     //! Set data based on category from URL
     const filtered = allProducts.filter((product) => product.type === category);
+    // .filter((product) => product.packaging === queryParamType);
     setData(filtered);
     setFinalData(
       filtered.sort((a, b) => {

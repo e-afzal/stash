@@ -87,12 +87,15 @@ export default function Home() {
                 aromas and exceptional taste of our carefully curated teas,
                 conveniently packaged for your on-the-go lifestyle.
               </p>
-              <Link className="cta" href={"#"}>
+              <Link className="cta" href={"/collections/tea?type=tea bag"}>
                 shop now
               </Link>
             </div>
             <div className={styles.product_image}>
-              <Image src={teabags} alt="Loose Leaf Tea on a plate" />
+              <Image
+                src={teabags}
+                alt="Stash satchets and mugs artfully placed"
+              />
             </div>
           </div>
         </section>
@@ -134,7 +137,7 @@ export default function Home() {
                 handpicked tea leaves, our loose leaf teas are a celebration of
                 nature's bounty.
               </p>
-              <Link className="cta" href={"#"}>
+              <Link className="cta" href={"/collections/tea?type=loose leaf"}>
                 shop now
               </Link>
             </div>
@@ -174,7 +177,7 @@ export default function Home() {
                 elegance and practicality of our teaware make it a gift that
                 will be cherished for years to come.
               </p>
-              <Link className="cta" href={"#"}>
+              <Link className="cta" href={"/collections/teaware"}>
                 shop now
               </Link>
             </div>

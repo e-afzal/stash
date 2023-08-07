@@ -24,7 +24,7 @@ const looseTea = [
       },
       {
         title: "serving size",
-        content: `8 grams makes 3-4 cups|25 grams makes 10-15 cups|50 grams makes 20-25 cups|100 grams makes 45-50 cups|1 pound loose makes 180-200 cups`,
+        content: `8 grams makes 3-4 cups ● 25 grams makes 10-15 cups ● 50 grams makes 20-25 cups ● 100 grams makes 45-50 cups ● 1 pound loose makes 180-200 cups`,
       },
     ],
     type: "tea",
@@ -94,7 +94,7 @@ const looseTea = [
       },
       {
         title: "serving size",
-        content: `8 grams makes 3-4 cups|25 grams makes 10-15 cups|50 grams makes 20-25 cups|100 grams makes 45-50 cups|1 pound loose makes 180-200 cups`,
+        content: `8 grams makes 3-4 cups ● 25 grams makes 10-15 cups ● 50 grams makes 20-25 cups ● 100 grams makes 45-50 cups ● 1 pound loose makes 180-200 cups`,
       },
     ],
     type: "tea",
@@ -418,7 +418,7 @@ const looseTea = [
       },
       {
         title: "serving size",
-        content: `8 grams makes 3-4 cups|25 grams makes 10-15 cups|50 grams makes 20-25 cups|100 grams makes 45-50 cups|1 pound loose makes 180-200 cups`,
+        content: `8 grams makes 3-4 cups ● 25 grams makes 10-15 cups ● 50 grams makes 20-25 cups ● 100 grams makes 45-50 cups ● 1 pound loose makes 180-200 cups`,
       },
     ],
     type: "tea",
@@ -482,7 +482,7 @@ const looseTea = [
       },
       {
         title: "serving size",
-        content: `8 grams makes 3-4 cups|100 grams makes 45-50 cups`,
+        content: `8 grams makes 3-4 cups ● 100 grams makes 45-50 cups`,
       },
     ],
     type: "tea",
@@ -544,7 +544,7 @@ const looseTea = [
       },
       {
         title: "serving size",
-        content: `8 grams makes 3-4 cups|100 grams makes 45-50 cups|1 pound loose makes 180-200 cups`,
+        content: `8 grams makes 3-4 cups ● 100 grams makes 45-50 cups ● 1 pound loose makes 180-200 cups`,
       },
     ],
     type: "tea",
