@@ -181,7 +181,7 @@ const TeaFilterOverlay = ({
             </button>
             <button
               className={styles.clear_btn}
-              onClick={() => window.location.reload()}
+              onClick={() => window.location.assign("/collections/tea")}
             >
               clear all
             </button>

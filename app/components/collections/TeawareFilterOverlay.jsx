@@ -113,7 +113,7 @@ const TeawareFilterOverlay = ({
             </button>
             <button
               className={styles.clear_btn}
-              onClick={() => window.location.reload()}
+              onClick={() => window.location.assign("/collections/teaware")}
             >
               clear all
             </button>
