@@ -7,10 +7,10 @@ import styles from "@/public/styles/components/collections/filter_overlay.module
 import cancelIcon from "@/public/icons/close.svg";
 
 const TeawareFilterOverlay = ({
+  filters,
   modalOpen,
   setModalOpen,
   typeFiltersParams,
-  filters,
   setFilters,
   data,
   setFinalData,
@@ -45,18 +45,12 @@ const TeawareFilterOverlay = ({
       data
         .filter((product) => filters.subtype.includes(product.subtype))
         .sort((a, b) => {
-          if (sort === "Price (Ascending)") {
-            return a.price > b.price;
-          }
-          if (sort === "Price (Descending)") {
-            return b.price > a.price;
-          }
-          if (sort === "Alphabetical (A-Z)") {
+          if (sort === "Price (Ascending)") return a.price > b.price;
+          if (sort === "Price (Descending)") return b.price > a.price;
+          if (sort === "Alphabetical (A-Z)")
             return a.title.localeCompare(b.title);
-          }
-          if (sort === "Alphabetical (Z-A)") {
+          if (sort === "Alphabetical (Z-A)")
             return b.title.localeCompare(a.title);
-          }
         })
     );
 

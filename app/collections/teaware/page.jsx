@@ -23,8 +23,8 @@ const TeawareCollections = () => {
   const allProducts = [...teaware, ...gifts];
 
   //? Get QUERY PARAMS
-  //   const searchParams = useSearchParams();
-  //   const queryParamType = searchParams.get("type");
+  const searchParams = useSearchParams();
+  const urlSearchParam = searchParams.get("subtype");
 
   // STATES
   const [filterModal, setFilterModal] = useState(false);
@@ -32,11 +32,11 @@ const TeawareCollections = () => {
   const [data, setData] = useState(null);
   const [finalData, setFinalData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [sort, setSort] = useState("Price (Ascending)");
   //? Default Filters [Checkboxes are checked based on below values in array]
   const [filters, setFilters] = useState({
     subtype: [],
   });
+  const [sort, setSort] = useState("");
   const [typeFiltersParams, setTypeFiltersParams] = useState({
     subtype: [
       "baked goods",
@@ -51,29 +51,47 @@ const TeawareCollections = () => {
     ],
   });
 
-  // USE-EFFECT
+  //! USE-EFFECT - Get and set data based on URL SEARCH PARAM
+  //! Trigger during initial load only; thus NO dependencies and has an empty array
   useEffect(() => {
-    setData(allProducts);
-    setFinalData(
-      allProducts.sort((a, b) => {
-        if (sort === "Price (Ascending)") {
-          return a.price > b.price;
-        }
-        if (sort === "Price (Descending)") {
-          return b.price > a.price;
-        }
-        if (sort === "Alphabetical (A-Z)") {
-          return a.title.localeCompare(b.title);
-        }
-        if (sort === "Alphabetical (Z-A)") {
-          return b.title.localeCompare(a.title);
-        }
-      })
-    );
-    setIsLoading(false);
-  }, [sort]);
+    if (urlSearchParam) {
+      //? Searching 'allProducts' with subtype as 'urlSearchParam'
+      //? e.g. 'canisters', 'tea pots', etc.
+      const paramFiltered = allProducts.filter(
+        (each) => each.subtype === urlSearchParam
+      );
+      setFinalData(
+        paramFiltered.sort((a, b) => a.title.localeCompare(b.title))
+      );
+      setData(paramFiltered);
+      setIsLoading(false);
+    } else {
+      //? Show ALL TEAWARE products if no 'URL search param' found
+      setData(allProducts);
+      setFinalData(allProducts.sort((a, b) => a.title.localeCompare(b.title)));
+      setIsLoading(false);
+    }
+  }, []);
 
-  if (!isLoading && finalData) {
+  //?HANDLERS
+  const handleSort = (e) => {
+    setSort(e.target.value);
+    const value = e.target.value;
+    const sortableData = [...finalData];
+    if (value === "Price (Ascending)")
+      setFinalData(sortableData.sort((a, b) => a.price > b.price));
+
+    if (value === "Price (Descending)")
+      setFinalData(sortableData.sort((a, b) => b.price > a.price));
+
+    if (value === "Alphabetical (A-Z)")
+      setFinalData(sortableData.sort((a, b) => a.title.localeCompare(b.title)));
+
+    if (value === "Alphabetical (Z-A)")
+      setFinalData(sortableData.sort((a, b) => b.title.localeCompare(a.title)));
+  };
+
+  if (isLoading === false && finalData) {
     return (
       <>
         <Navbar />
@@ -85,32 +103,20 @@ const TeawareCollections = () => {
               <h2 className={styles.category_title}>teaware</h2>
               <div className={styles.filter_flex}>
                 <div className={styles.sort_box}>
-                  <select defaultChecked={"Sort"}>
+                  <select defaultValue={"Sort"}>
                     <option value="Sort" disabled>
                       Sort
                     </option>
-                    <option
-                      value="Price (Ascending)"
-                      onClick={(e) => setSort(e.target.value)}
-                    >
+                    <option value="Price (Ascending)" onClick={handleSort}>
                       Price (Ascending)
                     </option>
-                    <option
-                      value="Price (Descending)"
-                      onClick={(e) => setSort(e.target.value)}
-                    >
+                    <option value="Price (Descending)" onClick={handleSort}>
                       Price (Descending)
                     </option>
-                    <option
-                      value="Alphabetical (A-Z)"
-                      onClick={(e) => setSort(e.target.value)}
-                    >
+                    <option value="Alphabetical (A-Z)" onClick={handleSort}>
                       Alphabetical (A-Z)
                     </option>
-                    <option
-                      value="Alphabetical (Z-A)"
-                      onClick={(e) => setSort(e.target.value)}
-                    >
+                    <option value="Alphabetical (Z-A)" onClick={handleSort}>
                       Alphabetical (Z-A)
                     </option>
                   </select>

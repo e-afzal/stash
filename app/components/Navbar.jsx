@@ -125,9 +125,9 @@ const Navbar = () => {
       <header className={styles.header}>
         <nav>
           <div className={styles.image_container}>
-            <Link href={"/"}>
+            <a href={"/"}>
               <Image src={logo} alt="Stash Logo" />
-            </Link>
+            </a>
           </div>
           <div className={styles.secondary_nav_container}>
             <ul className={styles.nav_menu_items}>
@@ -159,14 +159,19 @@ const Navbar = () => {
           <div className={styles.tea_dialog}>
             <div className={styles.tea_container}>
               {teaCollections.map((each, index) => (
-                <Link
+                <a
                   key={index}
                   className={styles.tea_dialog_box}
                   href={each.url}
                 >
-                  <Image src={each.image} width={250} height={250} />
+                  <Image
+                    src={each.image}
+                    width={250}
+                    height={250}
+                    alt={each.title}
+                  />
                   <p>{each.title}</p>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -180,14 +185,19 @@ const Navbar = () => {
           <div className={styles.teaware_dialog}>
             <div className={styles.teaware_container}>
               {teawareCollections.map((each, index) => (
-                <Link
+                <a
                   key={index}
                   className={styles.teaware_dialog_box}
                   href={each.url}
                 >
-                  <Image src={each.image} width={250} height={250} />
+                  <Image
+                    src={each.image}
+                    width={250}
+                    height={250}
+                    alt={each.title}
+                  />
                   <p>{each.title}</p>
-                </Link>
+                </a>
               ))}
             </div>
           </div>

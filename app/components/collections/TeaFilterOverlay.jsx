@@ -48,14 +48,14 @@ const TeaFilterOverlay = ({
     const filterCaffeine = data.filter((product) =>
       filters.caffeine.includes(product.caffeine)
     );
-    const filterPackaging = data.filter((product) =>
-      filters.packaging.includes(product.packaging)
-    );
+    // const filterPackaging = data.filter((product) =>
+    //   filters.packaging.includes(product.packaging)
+    // );
     //! REMOVE any DUPLICATES and return results that fit any of the three criterias
     const allResults = [
       ...filterTeaType,
       ...filterCaffeine,
-      ...filterPackaging,
+      // ...filterPackaging,
     ];
     const uniqueIds = new Set();
     const uniqueArray = allResults.filter((element) => {
@@ -67,26 +67,20 @@ const TeaFilterOverlay = ({
     });
     setFinalData(
       uniqueArray.sort((a, b) => {
-        if (sort === "Price (Ascending)") {
-          return a.price > b.price;
-        }
-        if (sort === "Price (Descending)") {
-          return b.price > a.price;
-        }
-        if (sort === "Alphabetical (A-Z)") {
+        if (sort === "Price (Ascending)") return a.price > b.price;
+        if (sort === "Price (Descending)") return b.price > a.price;
+        if (sort === "Alphabetical (A-Z)")
           return a.title.localeCompare(b.title);
-        }
-        if (sort === "Alphabetical (Z-A)") {
+        if (sort === "Alphabetical (Z-A)")
           return b.title.localeCompare(a.title);
-        }
       })
     );
 
     //* If NO filter selected, just show the original DATA
     if (
       !filters.type.length &&
-      !filters.caffeine.length &&
-      !filters.packaging.length
+      !filters.caffeine.length
+      // && !filters.packaging.length
     ) {
       setFinalData(data);
     }
@@ -159,7 +153,7 @@ const TeaFilterOverlay = ({
             )}
 
             {/* 'PACKAGING' FILTERS */}
-            {"packaging" in typeFiltersParams && (
+            {/* {"packaging" in typeFiltersParams && (
               <div className={styles.filter_container}>
                 <h3>packaging</h3>
                 {typeFiltersParams.packaging.map((each, index) => (
@@ -176,7 +170,7 @@ const TeaFilterOverlay = ({
                   </div>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         </div>
 
