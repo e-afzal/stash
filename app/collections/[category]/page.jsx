@@ -1,199 +1,201 @@
-"use client";
+//! LEGACY CODE: Now transferred to TEA and TEAWARE collections pages based on their own criteria
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+// "use client";
 
-// STYLES
-import styles from "@/public/styles/pages/collections/collections.module.scss";
+// import { useEffect, useState } from "react";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useSearchParams } from "next/navigation";
 
-// COMPONENTS
-import Navbar from "@/app/components/Navbar";
-import NavbarMobile from "@/app/components/NavbarMobile";
-import FilterOverlay from "@/app/components/collections/FilterOverlay";
-import Footer from "@/app/components/Footer";
+// // STYLES
+// import styles from "@/public/styles/pages/collections/collections.module.scss";
 
-// DATA
-import teaBags from "@/app/data/products/tea/tea_bag/data";
-import looseTea from "@/app/data/products/tea/loose_leaf/data";
-import teaware from "@/app/data/products/teaware/data";
-import gifts from "@/app/data/products/gifts/data";
+// // COMPONENTS
+// import Navbar from "@/app/components/Navbar";
+// import NavbarMobile from "@/app/components/NavbarMobile";
+// import FilterOverlay from "@/app/components/collections/FilterOverlay";
+// import Footer from "@/app/components/Footer";
 
-const Collections = ({ params: { category } }) => {
-  // PRODUCTS
-  const allProducts = [...teaBags, ...looseTea, ...teaware, ...gifts];
+// // DATA
+// import teaBags from "@/app/data/products/tea/tea_bag/data";
+// import looseTea from "@/app/data/products/tea/loose_leaf/data";
+// import teaware from "@/app/data/products/teaware/data";
+// import gifts from "@/app/data/products/gifts/data";
 
-  //? Get QUERY PARAMS
-  const searchParams = useSearchParams();
-  const queryParamType = searchParams.get("type");
+// const Collections = ({ params: { category } }) => {
+//   // PRODUCTS
+//   const allProducts = [...teaBags, ...looseTea, ...teaware, ...gifts];
 
-  // STATES
-  const [filterModal, setFilterModal] = useState(false);
-  //! Original DATA to leave untouched
-  const [data, setData] = useState(null);
-  const [finalData, setFinalData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  //? Default Filters [Checkboxes are checked based on below values]
-  const [filters, setFilters] = useState({
-    type: [queryParamType],
-    caffeine: [],
-    packaging: [queryParamType],
-    subtype: ["honey accessories"],
-  });
-  const [sort, setSort] = useState("Price (Ascending)");
-  const [typeFiltersParams, setTypeFiltersParams] = useState({});
+//   //? Get QUERY PARAMS
+//   const searchParams = useSearchParams();
+//   const queryParamType = searchParams.get("type");
 
-  //! FILTER PARAMETERS
-  const filtersParams = [
-    {
-      filterName: "tea",
-      type: ["black", "green", "oolong", "herbal"],
-      caffeine: ["caffeinated", "caffeine-free", "decaf"],
-      packaging: ["tea bag", "loose leaf"],
-    },
-    {
-      filterName: "teaware",
-      subtype: [
-        "baked goods",
-        "canisters & tins",
-        "cups & mugs",
-        "honey accessories",
-        "infusers & strainers",
-        "tea chests",
-        "tea presses",
-        "teapots",
-        "tea sets",
-      ],
-    },
-  ];
+//   // STATES
+//   const [filterModal, setFilterModal] = useState(false);
+//   //! Original DATA to leave untouched
+//   const [data, setData] = useState(null);
+//   const [finalData, setFinalData] = useState(null);
+//   const [isLoading, setIsLoading] = useState(true);
+//   //? Default Filters [Checkboxes are checked based on below values]
+//   const [filters, setFilters] = useState({
+//     type: [queryParamType],
+//     caffeine: [],
+//     packaging: [queryParamType],
+//     subtype: ["honey accessories"],
+//   });
+//   const [sort, setSort] = useState("Price (Ascending)");
+//   const [typeFiltersParams, setTypeFiltersParams] = useState({});
 
-  // USE-EFFECT
-  useEffect(() => {
-    //! Set Filters based on Category from URL and passed to FilterOverlay component
-    setTypeFiltersParams(
-      filtersParams.filter((each) => each.filterName === category)[0]
-    );
+//   //! FILTER PARAMETERS
+//   const filtersParams = [
+//     {
+//       filterName: "tea",
+//       type: ["black", "green", "oolong", "herbal"],
+//       caffeine: ["caffeinated", "caffeine-free", "decaf"],
+//       packaging: ["tea bag", "loose leaf"],
+//     },
+//     {
+//       filterName: "teaware",
+//       subtype: [
+//         "baked goods",
+//         "canisters & tins",
+//         "cups & mugs",
+//         "honey accessories",
+//         "infusers & strainers",
+//         "tea chests",
+//         "tea presses",
+//         "teapots",
+//         "tea sets",
+//       ],
+//     },
+//   ];
 
-    //! Set data based on category from URL
-    const filtered = allProducts.filter((product) => product.type === category);
-    // .filter((product) => product.packaging === queryParamType);
-    setData(filtered);
-    setFinalData(
-      filtered.sort((a, b) => {
-        if (sort === "Price (Ascending)") {
-          return a.price > b.price;
-        }
-        if (sort === "Price (Descending)") {
-          return b.price > a.price;
-        }
-        if (sort === "Alphabetical (A-Z)") {
-          return a.title.localeCompare(b.title);
-        }
-        if (sort === "Alphabetical (Z-A)") {
-          return b.title.localeCompare(a.title);
-        }
-      })
-    );
-    setIsLoading(false);
-  }, [sort]);
+//   // USE-EFFECT
+//   useEffect(() => {
+//     //! Set Filters based on Category from URL and passed to FilterOverlay component
+//     setTypeFiltersParams(
+//       filtersParams.filter((each) => each.filterName === category)[0]
+//     );
 
-  if (!isLoading && finalData) {
-    return (
-      <>
-        <Navbar />
-        <NavbarMobile />
-        <main id={styles.main}>
-          <div className={styles.collection_container}>
-            {/* RESULTS HEADER */}
-            <div className={styles.title_flex}>
-              <h2 className={styles.category_title}>{category}</h2>
-              <div className={styles.filter_flex}>
-                <div className={styles.sort_box}>
-                  <select defaultChecked={"Sort"}>
-                    <option value="Sort" disabled>
-                      Sort
-                    </option>
-                    <option
-                      value="Price (Ascending)"
-                      onClick={(e) => setSort(e.target.value)}
-                    >
-                      Price (Ascending)
-                    </option>
-                    <option
-                      value="Price (Descending)"
-                      onClick={(e) => setSort(e.target.value)}
-                    >
-                      Price (Descending)
-                    </option>
-                    <option
-                      value="Alphabetical (A-Z)"
-                      onClick={(e) => setSort(e.target.value)}
-                    >
-                      Alphabetical (A-Z)
-                    </option>
-                    <option
-                      value="Alphabetical (Z-A)"
-                      onClick={(e) => setSort(e.target.value)}
-                    >
-                      Alphabetical (Z-A)
-                    </option>
-                  </select>
-                </div>
-                <div
-                  className={styles.filter_box}
-                  onClick={() => setFilterModal(true)}
-                >
-                  <button>All filters</button>
-                </div>
-              </div>
-            </div>
+//     //! Set data based on category from URL
+//     const filtered = allProducts.filter((product) => product.type === category);
+//     // .filter((product) => product.packaging === queryParamType);
+//     setData(filtered);
+//     setFinalData(
+//       filtered.sort((a, b) => {
+//         if (sort === "Price (Ascending)") {
+//           return a.price > b.price;
+//         }
+//         if (sort === "Price (Descending)") {
+//           return b.price > a.price;
+//         }
+//         if (sort === "Alphabetical (A-Z)") {
+//           return a.title.localeCompare(b.title);
+//         }
+//         if (sort === "Alphabetical (Z-A)") {
+//           return b.title.localeCompare(a.title);
+//         }
+//       })
+//     );
+//     setIsLoading(false);
+//   }, [sort]);
 
-            {/* RESULTS GRID */}
-            <div className={styles.results_grid}>
-              {finalData.map((each, index) => (
-                <Link
-                  href={each.url}
-                  key={index}
-                  className={styles.result_card}
-                >
-                  <div className={styles.card_image}>
-                    <Image
-                      src={each.images[0]}
-                      alt={each.title}
-                      width={509}
-                      height={509}
-                    />
-                  </div>
-                  <div className={styles.card_content}>
-                    <div className={styles.title_test}>{each.title}</div>
-                    {/* <h4>{each.title}</h4> */}
-                    <span className={styles.product_price}>
-                      <sup>$</sup> {(each.price / 100).toFixed(2)}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
+//   if (!isLoading && finalData) {
+//     return (
+//       <>
+//         <Navbar />
+//         <NavbarMobile />
+//         <main id={styles.main}>
+//           <div className={styles.collection_container}>
+//             {/* RESULTS HEADER */}
+//             <div className={styles.title_flex}>
+//               <h2 className={styles.category_title}>{category}</h2>
+//               <div className={styles.filter_flex}>
+//                 <div className={styles.sort_box}>
+//                   <select defaultChecked={"Sort"}>
+//                     <option value="Sort" disabled>
+//                       Sort
+//                     </option>
+//                     <option
+//                       value="Price (Ascending)"
+//                       onClick={(e) => setSort(e.target.value)}
+//                     >
+//                       Price (Ascending)
+//                     </option>
+//                     <option
+//                       value="Price (Descending)"
+//                       onClick={(e) => setSort(e.target.value)}
+//                     >
+//                       Price (Descending)
+//                     </option>
+//                     <option
+//                       value="Alphabetical (A-Z)"
+//                       onClick={(e) => setSort(e.target.value)}
+//                     >
+//                       Alphabetical (A-Z)
+//                     </option>
+//                     <option
+//                       value="Alphabetical (Z-A)"
+//                       onClick={(e) => setSort(e.target.value)}
+//                     >
+//                       Alphabetical (Z-A)
+//                     </option>
+//                   </select>
+//                 </div>
+//                 <div
+//                   className={styles.filter_box}
+//                   onClick={() => setFilterModal(true)}
+//                 >
+//                   <button>All filters</button>
+//                 </div>
+//               </div>
+//             </div>
 
-            {/* FILTER OVERLAY */}
-            <FilterOverlay
-              category={category}
-              modalOpen={filterModal}
-              setModalOpen={setFilterModal}
-              typeFiltersParams={typeFiltersParams}
-              filters={filters}
-              setFilters={setFilters}
-              data={data}
-              setFinalData={setFinalData}
-              sort={sort}
-            />
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
-  }
-};
+//             {/* RESULTS GRID */}
+//             <div className={styles.results_grid}>
+//               {finalData.map((each, index) => (
+//                 <Link
+//                   href={each.url}
+//                   key={index}
+//                   className={styles.result_card}
+//                 >
+//                   <div className={styles.card_image}>
+//                     <Image
+//                       src={each.images[0]}
+//                       alt={each.title}
+//                       width={509}
+//                       height={509}
+//                     />
+//                   </div>
+//                   <div className={styles.card_content}>
+//                     <div className={styles.title_test}>{each.title}</div>
+//                     {/* <h4>{each.title}</h4> */}
+//                     <span className={styles.product_price}>
+//                       <sup>$</sup> {(each.price / 100).toFixed(2)}
+//                     </span>
+//                   </div>
+//                 </Link>
+//               ))}
+//             </div>
 
-export default Collections;
+//             {/* FILTER OVERLAY */}
+//             <FilterOverlay
+//               category={category}
+//               modalOpen={filterModal}
+//               setModalOpen={setFilterModal}
+//               typeFiltersParams={typeFiltersParams}
+//               filters={filters}
+//               setFilters={setFilters}
+//               data={data}
+//               setFinalData={setFinalData}
+//               sort={sort}
+//             />
+//           </div>
+//         </main>
+//         <Footer />
+//       </>
+//     );
+//   }
+// };
+
+// export default Collections;

@@ -69,33 +69,38 @@ header.header {
     margin-top: 14.55rem;
     z-index: 20;
     background-color: #fff;
+    overflow-y: scroll;
 
     // TEA DIALOG BOX
     &.tea_overlay_container {
       display: block;
 
       .tea_dialog {
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        a.tea_dialog_box {
-          display: flex;
+        padding-block: 7rem;
+        padding-inline: 2.5rem;
+
+        .tea_container {
+          display: grid;
+          // grid-template-columns: repeat(auto-fit, minmax(325px, 350px));
+          grid-template-columns: repeat(auto-fit, minmax(250px, 275px));
           justify-content: center;
-          align-items: center;
-          width: 100%;
-          font-family: "Kanit", sans-serif;
-          font-size: 21px;
-          letter-spacing: 0.25px;
-          font-weight: 300;
-          &:nth-child(1) {
-            grid-column: 1/2;
-          }
-          &:nth-child(2) {
-            grid-column: 1/2;
-          }
-          &:nth-child(3) {
-            grid-column: 2/3;
-            grid-row: 1/3;
+          column-gap: 3rem;
+          row-gap: 5rem;
+          margin-inline: auto;
+          a.tea_dialog_box {
+            img {
+              border-radius: 8.5px;
+              object-fit: cover;
+              height: 275px;
+              width: 275px;
+            }
+            p {
+              margin-top: 1.5rem;
+              font-family: "Kanit", sans-serif;
+              font-weight: 300;
+              color: #000;
+              letter-spacing: 0.55px;
+            }
           }
         }
       }
@@ -106,22 +111,31 @@ header.header {
       display: block;
 
       .teaware_dialog {
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        padding-block: 7rem;
+        padding-inline: 2.5rem;
 
-        a.teaware_dialog_box {
-          display: flex;
+        .teaware_container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 275px));
           justify-content: center;
-          align-items: center;
-          width: 100%;
-          font-family: "Kanit", sans-serif;
-          font-size: 21px;
-          letter-spacing: 0.25px;
-          font-weight: 300;
-          grid-column: span 1;
-          &:nth-child(1) {
-            background-color: #ffe4c4;
+          column-gap: 3rem;
+          row-gap: 5rem;
+          margin-inline: auto;
+          max-width: 1095px;
+          a.teaware_dialog_box {
+            img {
+              border-radius: 8.5px;
+              object-fit: cover;
+              height: 275px;
+              width: 275px;
+            }
+            p {
+              margin-top: 1.5rem;
+              font-family: "Kanit", sans-serif;
+              font-weight: 300;
+              color: #000;
+              letter-spacing: 0.55px;
+            }
           }
         }
       }

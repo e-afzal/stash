@@ -66,40 +66,56 @@ const Navbar = () => {
   const menuItems = [
     { title: "tea", url: "/", handler: toggleTeaDialog },
     { title: "teaware", url: "/", handler: toggleTeawareDialog },
-    { title: "gifts", url: "/" },
+    // { title: "gifts", url: "/" },
   ];
   const teaCollections = [
     {
       title: "tea bags",
-      url: "#",
-      textColor: "#000",
-      bgdColor: "#ffe4c4",
+      url: "/collections/tea?type=tea bag",
+      image: "/images/navbar/tea_bag.jpg",
     },
     {
       title: "loose leaf",
-      url: "#",
-      textColor: "#000",
-      bgdColor: "#f2fedc",
+      url: "/collections/tea?type=loose leaf",
+      image: "/images/navbar/loose_leaf.jpg",
     },
-    { title: "view all", url: "#", textColor: "#fff", bgdColor: "#1b3d2f" },
+    {
+      title: "view all",
+      url: "/collections/tea",
+      image: "/images/navbar/tea_view_all.jpg",
+    },
   ];
   const teawareCollections = [
-    { title: "brewing", url: "#", bgdColor: "#FFEADA", textColor: "#665548" },
+    {
+      title: "canisters & tins",
+      url: "/collections/teaware?subtype=canisters & tins",
+      image: "/images/navbar/canisters.jpg",
+    },
     {
       title: "cups & mugs",
-      url: "#",
-      bgdColor: "#FFD5A4",
-      textColor: "#6b4d22",
+      url: "/collections/teaware?subtype=cups & mugs",
+      image: "/images/navbar/mugs.jpg",
     },
-    { title: "serving", url: "#", bgdColor: "#FFB5A4", textColor: "#763a2e" },
-    { title: "tea sets", url: "#", bgdColor: "#FDEAC3", textColor: "#645635" },
     {
-      title: "tea storage",
-      url: "#",
-      bgdColor: "#F4CBBA",
-      textColor: "#69483a",
+      title: "honey accessories",
+      url: "/collections/teaware?subtype=honey accessories",
+      image: "/images/navbar/honey.jpg",
     },
-    { title: "view all", url: "#", bgdColor: "#C8A18F", textColor: "#593a2b" },
+    {
+      title: "tea pots",
+      url: "/collections/teaware?subtype=teapots",
+      image: "/images/navbar/teapot.jpg",
+    },
+    {
+      title: "tea sets",
+      url: "/collections/teaware?subtype=tea sets",
+      image: "/images/navbar/teasets.jpg",
+    },
+    {
+      title: "view all",
+      url: "/collections/teaware",
+      image: "/images/navbar/teaware_view_all.jpg",
+    },
   ];
   return (
     <>
@@ -141,19 +157,18 @@ const Navbar = () => {
           className={`${styles.overlay_container} ${styles.tea_overlay_container}`}
         >
           <div className={styles.tea_dialog}>
-            {teaCollections.map((each, index) => (
-              <Link
-                key={index}
-                className={styles.tea_dialog_box}
-                style={{
-                  color: each.textColor,
-                  backgroundColor: each.bgdColor,
-                }}
-                href={each.url}
-              >
-                {each.title}
-              </Link>
-            ))}
+            <div className={styles.tea_container}>
+              {teaCollections.map((each, index) => (
+                <Link
+                  key={index}
+                  className={styles.tea_dialog_box}
+                  href={each.url}
+                >
+                  <Image src={each.image} width={250} height={250} />
+                  <p>{each.title}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -163,19 +178,18 @@ const Navbar = () => {
           className={`${styles.overlay_container} ${styles.teaware_overlay_container}`}
         >
           <div className={styles.teaware_dialog}>
-            {teawareCollections.map((each, index) => (
-              <Link
-                key={index}
-                className={styles.teaware_dialog_box}
-                style={{
-                  backgroundColor: each.bgdColor,
-                  color: each.textColor,
-                }}
-                href={each.url}
-              >
-                {each.title}
-              </Link>
-            ))}
+            <div className={styles.teaware_container}>
+              {teawareCollections.map((each, index) => (
+                <Link
+                  key={index}
+                  className={styles.teaware_dialog_box}
+                  href={each.url}
+                >
+                  <Image src={each.image} width={250} height={250} />
+                  <p>{each.title}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 

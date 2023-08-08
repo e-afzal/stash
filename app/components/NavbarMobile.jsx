@@ -29,17 +29,13 @@ const NavbarMobile = () => {
       collections: [
         {
           title: "tea bags",
-          url: "#",
-          textColor: "#000",
-          bgdColor: "#ffe4c4",
+          url: "/collections/tea?type=tea bag",
         },
         {
           title: "loose leaf",
-          url: "#",
-          textColor: "#000",
-          bgdColor: "#f2fedc",
+          url: "/collections/tea?type=loose leaf",
         },
-        { title: "view all", url: "#", textColor: "#fff", bgdColor: "#1b3d2f" },
+        { title: "view all", url: "/collections/tea" },
       ],
     },
     {
@@ -47,40 +43,28 @@ const NavbarMobile = () => {
       url: "/",
       collections: [
         {
-          title: "brewing",
-          url: "#",
-          bgdColor: "#FFEADA",
-          textColor: "#665548",
+          title: "canisters & tins",
+          url: "/collections/teaware?subtype=canisters & tins",
         },
         {
           title: "cups & mugs",
-          url: "#",
-          bgdColor: "#FFD5A4",
-          textColor: "#6b4d22",
+          url: "/collections/teaware?subtype=cups & mugs",
         },
         {
-          title: "serving",
-          url: "#",
-          bgdColor: "#FFB5A4",
-          textColor: "#763a2e",
+          title: "honey accessories",
+          url: "/collections/teaware?subtype=honey accessories",
+        },
+        {
+          title: "tea pots",
+          url: "/collections/teaware?subtype=teapots",
         },
         {
           title: "tea sets",
-          url: "#",
-          bgdColor: "#FDEAC3",
-          textColor: "#645635",
-        },
-        {
-          title: "tea storage",
-          url: "#",
-          bgdColor: "#F4CBBA",
-          textColor: "#69483a",
+          url: "/collections/teaware?subtype=tea sets",
         },
         {
           title: "view all",
-          url: "#",
-          bgdColor: "#C8A18F",
-          textColor: "#593a2b",
+          url: "/collections/teaware",
         },
       ],
     },

@@ -15,7 +15,7 @@ import showcase_desktop from "@/public/images/home/showcase.png";
 import showcase_mobile from "@/public/images/home/showcase_mobile.jpg";
 import teabags from "@/public/images/home/teabags.jpg";
 import loose from "@/public/images/home/loose_leaf.jpg";
-import teawareImage from "@/public/images/home/teaware.jpg";
+import teawareImage from "@/public/images/navbar/teaware_view_all.jpg";
 
 // DATA
 import teaBags from "@/app/data/products/tea/tea_bag/data";

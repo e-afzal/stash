@@ -253,12 +253,12 @@ main#main {
           height: auto;
         }
         p {
-          margin-top: 2rem;
+          margin-top: 1.5rem;
           font-family: "Kanit", sans-serif;
           font-weight: 300;
-          color: #2f2f2f;
+          color: #000;
           text-transform: capitalize;
-          font-size: clamp(1.7rem, 3vw, 2rem);
+          font-size: 1.6rem;
           text-align: center;
         }
       }
