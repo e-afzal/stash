@@ -80,13 +80,12 @@ main#main {
           flex-direction: column;
           align-items: center;
           row-gap: 9px;
-          div.title_test {
+          div.product_title {
             width: 95%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             padding-bottom: 5px;
-
             text-align: center;
             font-family: "Kanit", sans-serif;
             font-weight: 300;

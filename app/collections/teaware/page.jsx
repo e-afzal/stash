@@ -34,14 +34,14 @@ const TeawareCollections = () => {
   const [isLoading, setIsLoading] = useState(true);
   //? Default Filters [Checkboxes are checked based on below values in array]
   const [filters, setFilters] = useState({
-    subtype: [],
+    subtype: urlSearchParam ? [urlSearchParam] : [],
   });
   const [sort, setSort] = useState("");
   const [typeFiltersParams, setTypeFiltersParams] = useState({
     subtype: [
       "baked goods",
-      "canisters & tins",
-      "cups & mugs",
+      "canisters and tins",
+      "cups and mugs",
       "honey accessories",
       "infusers & strainers",
       "tea chests",
@@ -58,7 +58,7 @@ const TeawareCollections = () => {
       //? Searching 'allProducts' with subtype as 'urlSearchParam'
       //? e.g. 'canisters', 'tea pots', etc.
       const paramFiltered = allProducts.filter(
-        (each) => each.subtype === urlSearchParam
+        (product) => product.subtype === urlSearchParam
       );
       setFinalData(
         paramFiltered.sort((a, b) => a.title.localeCompare(b.title))

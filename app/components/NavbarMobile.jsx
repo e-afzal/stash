@@ -44,11 +44,11 @@ const NavbarMobile = () => {
       collections: [
         {
           title: "canisters & tins",
-          url: "/collections/teaware?subtype=canisters & tins",
+          url: "/collections/teaware?subtype=canisters and tins",
         },
         {
           title: "cups & mugs",
-          url: "/collections/teaware?subtype=cups & mugs",
+          url: "/collections/teaware?subtype=cups and mugs",
         },
         {
           title: "honey accessories",

@@ -88,12 +88,12 @@ const Navbar = () => {
   const teawareCollections = [
     {
       title: "canisters & tins",
-      url: "/collections/teaware?subtype=canisters & tins",
+      url: "/collections/teaware?subtype=canisters and tins",
       image: "/images/navbar/canisters.jpg",
     },
     {
       title: "cups & mugs",
-      url: "/collections/teaware?subtype=cups & mugs",
+      url: "/collections/teaware?subtype=cups and mugs",
       image: "/images/navbar/mugs.jpg",
     },
     {

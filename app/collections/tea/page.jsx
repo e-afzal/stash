@@ -139,7 +139,7 @@ const TeaCollections = () => {
                     />
                   </div>
                   <div className={styles.card_content}>
-                    <div className={styles.title_test}>{each.title}</div>
+                    <div className={styles.product_title}>{each.title}</div>
                     {/* <h4>{each.title}</h4> */}
                     <span className={styles.product_price}>
                       <sup>$</sup> {(each.price / 100).toFixed(2)}

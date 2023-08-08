@@ -97,9 +97,9 @@ const SearchModal = ({ modelOpen, handleModalOpen }) => {
                   />
                 </div>
                 <div className={styles.card_content}>
-                  <h4>{each.title}</h4>
+                  <div className={styles.product_title}>{each.title}</div>
                   <span className={styles.product_price}>
-                    <sup>$</sup> {each.price / 100}
+                    <sup>$</sup> {(each.price / 100).toFixed(2)}
                   </span>
                 </div>
               </Link>
