@@ -48,7 +48,7 @@ export default function Home() {
               A rare and sought-after tea with a smooth and silky texture;
               available only once in a year.
             </p>
-            <Link href={"#"}>buy now</Link>
+            <Link href={"/products/japanese-shincha-green-tea"}>buy now</Link>
           </div>
         </section>
 

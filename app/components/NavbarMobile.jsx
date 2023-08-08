@@ -150,9 +150,9 @@ const NavbarMobile = () => {
                   </Accordion.Trigger>
                   <Accordion.Content className={styles.accordion_content}>
                     {each.collections.map((each, index) => (
-                      <Link key={index} href={each.url}>
+                      <a key={index} href={each.url}>
                         {each.title}
-                      </Link>
+                      </a>
                     ))}
                   </Accordion.Content>
                 </Accordion.Header>
