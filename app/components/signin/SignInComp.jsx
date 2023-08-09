@@ -4,7 +4,7 @@ import styles from "@/public/styles/components/signup/signup.module.scss";
 // CLERK
 import { SignIn } from "@clerk/nextjs";
 
-const SignUpComp = () => {
+const SignInComp = () => {
   return (
     <div className={styles.signup_container}>
       <SignIn
@@ -17,4 +17,4 @@ const SignUpComp = () => {
   );
 };
 
-export default SignUpComp;
+export default SignInComp;

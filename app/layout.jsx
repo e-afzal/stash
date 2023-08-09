@@ -28,6 +28,8 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider
       allowedRedirectOrigins={["http://localhost:3000/"]}
+      signInUrl="/sign-in"
+      signUpUrl="/sign-up"
       appearance={{
         userButton: {},
         elements: {},
