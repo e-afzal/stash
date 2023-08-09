@@ -1,0 +1,14 @@
+.signup_container {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 390px) {
+  /* .cl-internal-17ydaof {
+    CARD CONTAINER
+    width: 320px;
+  } */
+  .signup_container {
+    // justify-content: flex-start;
+  }
+}

@@ -4,10 +4,7 @@ import styles from "@/public/styles/pages/user/signin/signin.module.scss";
 // COMPONENTS
 import Navbar from "@/app/components/Navbar";
 import NavbarMobile from "@/app/components/NavbarMobile";
-import Footer from "@/app/components/Footer";
-
-// CLERK
-import { SignIn } from "@clerk/nextjs";
+import SignInComp from "@/app/components/signin/SignInComp";
 
 const SignInPage = () => {
   return (
@@ -15,9 +12,8 @@ const SignInPage = () => {
       <Navbar />
       <NavbarMobile />
       <main id={styles.main}>
-        <SignIn path="/user/sign-in" routing="path" signUpUrl="/user/sign-up" />
+        <SignInComp />
       </main>
-      <Footer />
     </>
   );
 };

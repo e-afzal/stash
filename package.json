@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.23.2",
+    "@clerk/themes": "^1.7.5",
     "@radix-ui/react-accordion": "^1.1.2",
     "@stripe/stripe-js": "^1.54.1",
     "next": "^13.4.12",

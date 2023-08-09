@@ -15,6 +15,9 @@ import searchIcon from "@/public/icons/search.svg";
 import accountIcon from "@/public/icons/account.svg";
 import bagIcon from "@/public/icons/bag.svg";
 
+// CLERK
+import { SignedIn, UserButton, SignedOut } from "@clerk/nextjs";
+
 const Navbar = () => {
   //? STATES
   const [modalOpen, setModalOpen] = useState(false);
@@ -139,9 +142,14 @@ const Navbar = () => {
               ))}
             </ul>
             <div className={styles.icons_container}>
-              <Link href={"/user/sign-up"}>
-                <Image src={accountIcon} alt="My Account icon" />
-              </Link>
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
+              <SignedOut>
+                <Link href={"/sign-in"}>
+                  <Image src={accountIcon} alt="My Account icon" />
+                </Link>
+              </SignedOut>
               <button onClick={() => setModalOpen(true)}>
                 <Image src={searchIcon} alt="Search Icon" />
               </button>

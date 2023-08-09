@@ -88,3 +88,52 @@ a.cta {
   color: #fff;
   border-radius: 5.5px;
 }
+
+/* CLERK STYLES */
+/* BIG NOTE: All these styles apply to both, SIGNUP and SIGNIN components */
+.cl-internal-17ydaof {
+  /* CARD CONTAINER */
+  max-width: 400px;
+  min-width: 375px;
+}
+
+.cl-internal-1pccesk {
+  /* SOCIAL SIGN UP ICONS */
+  width: 2rem;
+  height: auto;
+}
+
+.cl-internal-b3fm6y {
+  /* 'POWERED BY CLERK' on left of card */
+  display: none;
+}
+
+.cl-internal-1w69gvy {
+  /* ALL LABELS */
+  font-size: 13.5px;
+}
+
+.cl-internal-1minw9v {
+  /* CTA BUTTON */
+  padding-block: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 390px) {
+  .cl-internal-1ojiiql {
+    width: 100%;
+    width: 330px;
+    display: flex;
+    justify-content: center;
+  }
+  .cl-internal-17ydaof {
+    /* CARD CONTAINER */
+    /* padding: 0; */
+    padding: 1rem 1.2rem;
+    margin: 0;
+    min-width: 340px;
+  }
+  .cl-internal-17qh226 {
+    flex-flow: column;
+  }
+}

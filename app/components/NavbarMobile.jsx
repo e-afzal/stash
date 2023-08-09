@@ -18,7 +18,12 @@ import facebook from "@/public/icons/facebook.svg";
 import instagram from "@/public/icons/instagram.svg";
 import twitter from "@/public/icons/twitter.svg";
 import youtube from "@/public/icons/youtube.svg";
+
+// COMPONENTS
 import SearchModal from "./SearchModal";
+
+// CLERK
+import { SignedIn, SignedOut, SignOutButton } from "@clerk/nextjs";
 
 const NavbarMobile = () => {
   //? DOM ELEMENTS
@@ -122,10 +127,12 @@ const NavbarMobile = () => {
           style={{ display: menuOpen ? "block" : "none" }}
         >
           <div className={styles.icons_container}>
-            <Link href={"/"}>
-              <Image src={accountIcon} alt="My Account Icon" />
-              <p>Account</p>
-            </Link>
+            <SignedOut>
+              <Link href={"/sign-in"}>
+                <Image src={accountIcon} alt="My Account Icon" />
+                <p>Account</p>
+              </Link>
+            </SignedOut>
             <Link href={"/cart"}>
               <Image src={bagIcon} alt="Shopping Bag Icon" />
               <p>Cart</p>
@@ -136,14 +143,36 @@ const NavbarMobile = () => {
             </button>
           </div>
           {/* <input type="text" placeholder="What are you looking for?" /> */}
+
           {/* ACCORDION */}
+          {/* NOTE: User Dashboard Accordion visible ONLY when signed in  */}
+          <SignedIn>
+            <Accordion.Root id={styles.accordion_container} collapsible>
+              <Accordion.Item value={`item0`}>
+                <Accordion.Header>
+                  <Accordion.Trigger className={styles.accordion_trigger}>
+                    Your Dashboard
+                  </Accordion.Trigger>
+                  <Accordion.Content className={styles.accordion_content}>
+                    <Link href={"/user/dashboard"}>Dashboard</Link>
+                    <SignOutButton
+                      signOutCallback={() => window.location.replace("/")}
+                    >
+                      sign out
+                    </SignOutButton>
+                  </Accordion.Content>
+                </Accordion.Header>
+              </Accordion.Item>
+            </Accordion.Root>
+          </SignedIn>
+          {/* OTHER MENU ITEMS */}
           {menuItems.map((each, index) => (
             <Accordion.Root
               id={styles.accordion_container}
               collapsible
-              key={index}
+              key={index + 1}
             >
-              <Accordion.Item value={`item${index}`}>
+              <Accordion.Item value={`item${index + 1}`}>
                 <Accordion.Header>
                   <Accordion.Trigger className={styles.accordion_trigger}>
                     {each.title}

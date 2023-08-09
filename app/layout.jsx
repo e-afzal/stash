@@ -26,7 +26,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      allowedRedirectOrigins={["http://localhost:3000/"]}
+      appearance={{
+        userButton: {},
+        elements: {},
+        variables: {
+          fontFamily: "Kanit, sans-serif",
+          fontWeight: 300,
+          fontFamilyButtons: "sans-serif",
+          fontSize: "1.7rem",
+        },
+      }}
+    >
       <html lang="en">
         <body>{children}</body>
       </html>
