@@ -117,6 +117,7 @@ const Navbar = () => {
       image: "/images/navbar/teaware_view_all.jpg",
     },
   ];
+
   return (
     <>
       {/* SEARCH MODAL */}
@@ -138,7 +139,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div className={styles.icons_container}>
-              <Link href={"/"}>
+              <Link href={"/user/sign-up"}>
                 <Image src={accountIcon} alt="My Account icon" />
               </Link>
               <button onClick={() => setModalOpen(true)}>

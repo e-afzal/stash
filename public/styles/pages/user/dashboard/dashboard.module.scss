@@ -1,0 +1,11 @@
+main#main {
+  margin-top: calc(14.56rem + clamp(5rem, 8.5vw, 7rem));
+  margin-bottom: clamp(5rem, 8.5vw, 8rem);
+}
+
+// MEDIA QUERY - DEFAULT 'MY' for MAIN element
+@media screen and (max-width: 811px) {
+  main#main {
+    margin-top: calc(8rem + 5rem);
+  }
+}
