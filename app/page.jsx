@@ -34,12 +34,14 @@ export default function Home() {
             className={styles.showcase_desktop}
             src={showcase_desktop}
             alt="Japanese Shincha Green Tea"
+            loading="eager"
           />
           <Link href={"/products/japanese-shincha-green-tea"}>
             <Image
               className={styles.showcase_mobile}
               src={showcase_mobile}
               alt="Japanese Shincha Green Tea"
+              loading="eager"
             />
           </Link>
           <div className={styles.showcase_content}>
