@@ -6,7 +6,7 @@ export default authMiddleware({
   //? All routes that require PUBLIC access go in the below array
   publicRoutes: [
     "/",
-    "/products",
+    "/products(.*)",
     "/collections/tea",
     "/collections/teaware",
     "/search",
@@ -14,8 +14,6 @@ export default authMiddleware({
     "/shipping",
     "/checkout",
     "/confirmation",
-    "/sign-in",
-    "/sign-up",
   ],
 });
 export const config = {
