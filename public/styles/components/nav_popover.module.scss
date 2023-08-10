@@ -1,0 +1,38 @@
+// Applies to NavPopover.jsx
+.popup_container {
+  button.popup_btn {
+    color: #fff;
+    position: relative;
+    .popup_dialog {
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 38px;
+      .dialog_content {
+        padding: 2.5rem;
+        a,
+        button {
+          font-family: "Kanit", sans-serif;
+          font-size: 1.75rem;
+          color: #111;
+          text-transform: capitalize;
+          text-align: left;
+          display: block;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          column-gap: 1.5rem;
+        }
+        .signout_btn {
+          display: flex;
+          align-items: center;
+          column-gap: 1.5rem;
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+}

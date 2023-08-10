@@ -8,6 +8,7 @@ import styles from "@/public/styles/components/navbar.module.scss";
 
 // COMPONENTS
 import SearchModal from "@/app/components/SearchModal";
+import NavPopover from "@/app/components/NavPopover";
 
 // ASSET IMPORT
 import logo from "@/public/images/nav_logo_white.webp";
@@ -142,9 +143,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div className={styles.icons_container}>
-              <SignedIn>
-                <UserButton afterSignOutUrl="/" />
-              </SignedIn>
+              <NavPopover />
               <SignedOut>
                 <Link href={"/sign-in"}>
                   <Image src={accountIcon} alt="My Account icon" />
