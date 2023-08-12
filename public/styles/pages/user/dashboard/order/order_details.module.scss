@@ -1,0 +1,196 @@
+main#main {
+  margin-top: calc(14.56rem + clamp(5rem, 8.5vw, 7rem));
+  margin-bottom: clamp(5rem, 8.5vw, 8rem);
+
+  // SECTION: ORDER SUMMARY
+  section#summary {
+    h2 {
+      text-transform: capitalize;
+      font-weight: 300;
+      font-family: "Kanit", sans-serif;
+      font-weight: 300;
+      color: #000;
+      text-align: center;
+      font-size: clamp(2.2rem, 5vw, 2.8rem);
+    }
+    .summary_container {
+      .order_card_container {
+        margin-top: 2rem;
+        padding-inline: 2.5rem;
+        max-width: 800px;
+        margin-inline: auto;
+        .item_card {
+          padding-block: 3.5rem;
+          border-bottom: 1px solid #d3d3d3;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          .item_image {
+            img {
+              width: 200px;
+              height: auto;
+            }
+          }
+          .item_content {
+            p {
+              font-family: "Kanit", sans-serif;
+              color: #000;
+            }
+            p.item_title {
+              font-size: clamp(1.7rem, 3vw, 2rem);
+              font-weight: 400;
+            }
+            p.item_quantity,
+            p.item_perUnit {
+              font-size: 1.55rem;
+              font-weight: 300;
+              margin-top: 0.5rem;
+            }
+          }
+          p.item_subtotal {
+            font-family: "Kanit", sans-serif;
+            color: #000;
+            font-size: clamp(1.6rem, 3vw, 1.7rem);
+            font-weight: 400;
+            text-align: right;
+          }
+          &:first-child {
+            border-top: 1px solid #d3d3d3;
+          }
+        }
+
+        .subtotal_flex {
+          margin-top: 1.2rem;
+          margin-bottom: 5px;
+        }
+        .shipping_flex {
+          padding-bottom: 1.2rem;
+          border-bottom: 1px solid #d3d3d3;
+        }
+        .subtotal_flex,
+        .shipping_flex,
+        .total_flex {
+          display: flex;
+          justify-content: space-between;
+
+          h5 {
+            font-family: "Kanit", sans-serif;
+            font-weight: 300;
+            color: #000;
+            text-transform: capitalize;
+            font-size: 1.65rem;
+          }
+          p {
+            font-family: "Kanit", sans-serif;
+            font-weight: 300;
+            color: #000;
+            text-transform: capitalize;
+            font-size: 1.65rem;
+          }
+        }
+        .total_flex {
+          margin-top: 1.2rem;
+          h5 {
+            font-weight: 400;
+            font-size: 1.8rem;
+          }
+          p {
+            font-weight: 400;
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  // SECTION: SHIPPING
+  section#shipping {
+    margin-top: 7rem;
+    padding-inline: 2.5rem;
+    h2 {
+      text-transform: capitalize;
+      font-weight: 300;
+      font-family: "Kanit", sans-serif;
+      font-weight: 300;
+      color: #000;
+      text-align: center;
+      font-size: clamp(2.2rem, 5vw, 2.8rem);
+    }
+    .shipping_grid_container {
+      margin-top: 2rem;
+      padding: 2rem 3rem;
+      border: 1px solid #d3d3d3;
+      border-radius: 4.5px;
+      max-width: 800px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
+      .shipping_grid_item {
+        h5 {
+          font-family: "Kanit", sans-serif;
+          color: #000;
+          font-size: clamp(1.7rem, 3vw, 2rem);
+          font-weight: 400;
+        }
+        p {
+          font-family: "Kanit", sans-serif;
+          font-size: 1.65rem;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  a.return {
+    min-width: 205px;
+    max-width: 205px;
+    margin-inline: auto;
+    margin-top: 4rem;
+    display: block;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 30px;
+    letter-spacing: 0.75px;
+    background-color: #0058a3;
+    color: #fff;
+    padding-block: 1.2rem;
+    padding-inline: 3.2rem;
+  }
+}
+
+// MEDIA QUERY - DEFAULT 'MY' for MAIN element
+@media screen and (max-width: 811px) {
+  main#main {
+    margin-top: 13rem;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  main#main {
+    section#summary {
+      .summary_container .order_card_container .item_card {
+        grid-template-columns: 1fr 2fr 1fr;
+        column-gap: 7px;
+        .item_image img {
+          width: 120px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  main#main {
+    section#summary {
+      .summary_container .order_card_container .item_card {
+        display: flex;
+        .item_image img {
+          width: 100px;
+        }
+      }
+    }
+  }
+}

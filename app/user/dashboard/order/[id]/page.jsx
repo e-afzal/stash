@@ -1,53 +1,49 @@
 "use client";
 
-// STYLES
-import styles from "@/public/styles/pages/confirmation/confirmation.module.scss";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+// STYLES
+import styles from "@/public/styles/pages/user/dashboard/order/order_details.module.scss";
 
 // COMPONENTS
-import Navbar from "../components/Navbar";
-import NavbarMobile from "../components/NavbarMobile";
-import Footer from "../components/Footer";
+import Navbar from "@/app/components/Navbar";
+import NavbarMobile from "@/app/components/NavbarMobile";
+import Footer from "@/app/components/Footer";
 
 // DATA
-import gifts from "../data/products/gifts/data";
-import teaware from "../data/products/teaware/data";
-import looseTea from "../data/products/tea/loose_leaf/data";
-import teaBags from "../data/products/tea/tea_bag/data";
+import gifts from "@/app/data/products/gifts/data";
+import looseTea from "@/app/data/products/tea/loose_leaf/data";
+import teaBags from "@/app/data/products/tea/tea_bag/data";
+import teaware from "@/app/data/products/teaware/data";
 
-const Confirmation = () => {
+const OrderDetails = ({ params }) => {
   // Merge all products required to filter and find the first image to use in 'Image' element based on 'Product Title'.
   const allProducts = [...gifts, ...teaware, ...looseTea, ...teaBags];
-  // Search Params for URL params extraction
-  const searchParams = useSearchParams();
 
-  // STATE
+  // STATES
+  const [loading, setLoading] = useState(true);
   const [amountDetails, setAmountDetails] = useState({});
   const [customerDetails, setCustomerDetails] = useState({});
   const [lineItems, setLineItems] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  // USE EFFECT: Fetch Order Details & Line Items
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const res = await fetch("/api/session", {
-          method: "POST",
-          body: JSON.stringify({
-            sessionId: searchParams.get("session_id"),
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const { session_details } = await res.json();
-        setAmountDetails(session_details.amount_details);
-        setCustomerDetails(session_details.customer_details);
-        setLineItems(session_details.lineItems);
-        setLoading(false);
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/orders/${params.id}`,
+          {
+            method: "GET",
+          }
+        );
+        const { order } = await res.json();
+        if (order) {
+          setAmountDetails(order.amount_details);
+          setCustomerDetails(order.customer_details);
+          setLineItems(order.lineItems);
+          setLoading(false);
+        }
       } catch (error) {
         console.log(error);
       }
@@ -61,20 +57,6 @@ const Confirmation = () => {
         <Navbar />
         <NavbarMobile />
         <main id={styles.main}>
-          {/* SECTION: CONGRATULATE */}
-          <section id={styles.congratulate}>
-            <div className={styles.congratulate_container}>
-              <h2>order confirmation</h2>
-              <p>
-                {customerDetails.name.split(" ")[0]}, thank you for your order!
-              </p>
-              <p>
-                We've received your order and will contact you as soon as your
-                package is shipped. You can find your order details below.
-              </p>
-            </div>
-          </section>
-
           {/* SECTION: ORDER SUMMARY */}
           <section id={styles.summary}>
             <h2>order details</h2>
@@ -145,8 +127,8 @@ const Confirmation = () => {
             </div>
           </section>
 
-          <Link className={styles.return} href={"/"}>
-            return home
+          <Link className={styles.return} href={"/user/dashboard"}>
+            return to dashboard
           </Link>
         </main>
         <Footer />
@@ -155,4 +137,4 @@ const Confirmation = () => {
   }
 };
 
-export default Confirmation;
+export default OrderDetails;

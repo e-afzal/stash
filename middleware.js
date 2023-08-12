@@ -14,6 +14,10 @@ export default authMiddleware({
     "/shipping",
     "/checkout",
     "/confirmation",
+    //! VERY IMPORTANT: You MUST add stripe related APIs added here. Or you wont be able to make requests to these endpoints on your frontend
+    //! These 2 endpoints are in the NextJS API file
+    "/api/stripe",
+    "/api/session",
   ],
 });
 export const config = {

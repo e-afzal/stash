@@ -1,6 +1,56 @@
 main#main {
   margin-top: calc(14.56rem + clamp(5rem, 8.5vw, 7rem));
-  margin-bottom: clamp(5rem, 8.5vw, 8rem);
+  margin-bottom: clamp(5rem, 8.5vw, 12rem);
+
+  h2.overview_title {
+    padding-inline: clamp(0.7rem, 2.5vw, 2rem);
+    font-family: "Kanit", sans-serif;
+    text-transform: capitalize;
+    color: #000;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .table_container {
+    margin-top: 3.5rem;
+    max-width: 800px;
+    margin-inline: auto;
+    padding-inline: clamp(0.7rem, 2.5vw, 2rem);
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 345px;
+      thead.table_header {
+        background-color: #000;
+        padding-block: 2rem;
+        tr {
+          th {
+            padding-block: 2rem;
+            font-family: "Kanit", sans-serif;
+            font-weight: 300;
+            font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+            text-align: center;
+            color: #fff;
+            text-transform: capitalize;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding-block: 2rem;
+            text-align: center;
+            font-family: "Kanit", sans-serif;
+            font-weight: 300;
+            color: #000;
+            font-size: clamp(1.4rem, 3.5vw, 1.65rem);
+          }
+        }
+      }
+    }
+  }
 }
 
 // MEDIA QUERY - DEFAULT 'MY' for MAIN element

@@ -57,7 +57,7 @@ const Cart = () => {
 
   if (loadedItems) {
     return (
-      <body>
+      <>
         <Navbar />
         <NavbarMobile />
         <main id={styles.main}>
@@ -125,7 +125,7 @@ const Cart = () => {
           </div>
         </main>
         <Footer />
-      </body>
+      </>
     );
   }
 };

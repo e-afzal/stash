@@ -53,7 +53,7 @@ const Shipping = () => {
     });
 
     const data = await res.json();
-    window.location.href = data.session.url;
+    if (data) window.location.href = data.session.url;
   };
 
   if (loadedItems && loadedShippingDetails) {
