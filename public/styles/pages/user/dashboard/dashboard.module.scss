@@ -51,6 +51,29 @@ main#main {
       }
     }
   }
+  .order_message {
+    margin-top: 3.5rem;
+    max-width: 800px;
+    margin-inline: auto;
+    p {
+      font-family: "Kanit", sans-serif;
+      font-weight: 300;
+      text-transform: capitalize;
+      font-size: clamp(1.6rem, 3vw, 1.8rem);
+      width: 41vw;
+      max-width: 45ch;
+      margin-top: 1rem;
+      line-height: 1.45;
+    }
+    a {
+      margin-top: 2.5rem;
+      padding-block: 1.5rem;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: #fff;
+      background-color: #003ea4;
+    }
+  }
 }
 
 // MEDIA QUERY - DEFAULT 'MY' for MAIN element

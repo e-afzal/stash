@@ -2,6 +2,9 @@
 //? Created for blocking pages that require AUTH e.g. dashboard
 import { authMiddleware } from "@clerk/nextjs";
 
+//! NOTE: NEVER add the sign-in and sign-up route here.
+//! Others, while signing in or signing up, the USER DASHBOARD will NEVER show up.
+
 export default authMiddleware({
   //? All routes that require PUBLIC access go in the below array
   publicRoutes: [
@@ -18,9 +21,6 @@ export default authMiddleware({
     //! These 2 endpoints are in the NextJS API file
     "/api/stripe",
     "/api/session",
-    // SIGN IN ROUTE includes /sign-in/factor-one
-    // "/sign-in(.*)",
-    // "/sign-up",
   ],
 });
 export const config = {
