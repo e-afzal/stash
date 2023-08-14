@@ -18,6 +18,8 @@ export default authMiddleware({
     //! These 2 endpoints are in the NextJS API file
     "/api/stripe",
     "/api/session",
+    "/sign-in",
+    "/sign-up",
   ],
 });
 export const config = {
