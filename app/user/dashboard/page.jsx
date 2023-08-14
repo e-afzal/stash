@@ -57,7 +57,7 @@ const Dashboard = () => {
           <h2 className={styles.overview_title}>my orders</h2>
 
           {/* IF ORDERS EXIST */}
-          {orders.length >= 1 && (
+          {orders?.length >= 1 && (
             <div className={styles.table_container}>
               <table>
                 <thead className={styles.table_header}>
@@ -94,7 +94,7 @@ const Dashboard = () => {
             </div>
           )}
           {/* IF NO ORDERS */}
-          {orders.length === 0 && (
+          {orders?.length === 0 && (
             <div className={styles.order_message}>
               <p>No orders have been placed.</p>
               <Link href={"/"} className="cta">
