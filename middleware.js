@@ -18,7 +18,8 @@ export default authMiddleware({
     //! These 2 endpoints are in the NextJS API file
     "/api/stripe",
     "/api/session",
-    "/sign-in",
+    // SIGN IN ROUTE includes /sign-in/factor-one
+    "/sign-in(.*)",
     "/sign-up",
   ],
 });
