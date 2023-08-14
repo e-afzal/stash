@@ -1,6 +1,6 @@
 main#main {
-  margin-top: calc(14.56rem + clamp(5rem, 8.5vw, 7rem));
-  margin-bottom: clamp(5rem, 8.5vw, 8rem);
+  margin-top: calc(14.56rem + clamp(6rem, 8.5vw, 7rem));
+  margin-bottom: clamp(6rem, 8.5vw, 7rem);
 
   h2 {
     padding-inline: 2.5rem;
@@ -142,8 +142,6 @@ main#main {
       font-family: "Kanit", sans-serif;
       font-weight: 300;
       font-size: 1.8rem;
-      width: 41vw;
-      max-width: 45ch;
       margin-top: 1rem;
       line-height: 1.45;
     }

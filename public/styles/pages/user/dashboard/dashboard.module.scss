@@ -1,6 +1,6 @@
 main#main {
-  margin-top: calc(14.56rem + clamp(5rem, 8.5vw, 7rem));
-  margin-bottom: clamp(5rem, 8.5vw, 12rem);
+  margin-top: calc(14.56rem + clamp(6rem, 8.5vw, 7rem));
+  margin-bottom: clamp(6rem, 8.5vw, 12rem);
 
   h2.overview_title {
     padding-inline: clamp(0.7rem, 2.5vw, 2rem);
@@ -61,8 +61,6 @@ main#main {
       font-weight: 300;
       text-transform: capitalize;
       font-size: 1.8rem;
-      width: 41vw;
-      max-width: 45ch;
       margin-top: 1rem;
       line-height: 1.45;
     }
