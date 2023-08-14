@@ -19,8 +19,8 @@ export default authMiddleware({
     "/api/stripe",
     "/api/session",
     // SIGN IN ROUTE includes /sign-in/factor-one
-    "/sign-in(.*)",
-    "/sign-up",
+    // "/sign-in(.*)",
+    // "/sign-up",
   ],
 });
 export const config = {
