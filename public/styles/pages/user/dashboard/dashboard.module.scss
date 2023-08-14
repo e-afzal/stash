@@ -55,23 +55,32 @@ main#main {
     margin-top: 3.5rem;
     max-width: 800px;
     margin-inline: auto;
+    padding-inline: clamp(0.7rem, 2.5vw, 2rem);
     p {
       font-family: "Kanit", sans-serif;
       font-weight: 300;
       text-transform: capitalize;
-      font-size: clamp(1.6rem, 3vw, 1.8rem);
+      font-size: 1.8rem;
       width: 41vw;
       max-width: 45ch;
       margin-top: 1rem;
       line-height: 1.45;
     }
     a {
-      margin-top: 2.5rem;
-      padding-block: 1.5rem;
-      font-size: 1.7rem;
+      text-align: center;
+      min-width: 110px;
+      // display: block;
+      font-family: "Kanit", sans-serif;
+      text-transform: uppercase;
       font-weight: 400;
+      letter-spacing: 0.75px;
+      background-color: #0058a3;
       color: #fff;
-      background-color: #003ea4;
+      border-radius: 30px;
+      margin-top: 4rem;
+      padding-block: 1.2rem;
+      padding-inline: 3.2rem;
+      font-size: 1.7rem;
     }
   }
 }
