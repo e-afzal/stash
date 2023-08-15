@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // STYLES
 import styles from "@/public/styles/pages/single_product/product.module.scss";
@@ -22,6 +22,11 @@ import looseLeafData from "@/app/data/products/tea/loose_leaf/data";
 import { useCart } from "@/app/store/useCart";
 
 const SingleProduct = ({ params }) => {
+  useEffect(() => {
+    //? Scroll to top of page when page loads
+    window.scrollTo(0, 0);
+  }, []);
+
   // FETCH PRODUCT
   const allProducts = [
     ...teaBagsData,
@@ -47,6 +52,7 @@ const SingleProduct = ({ params }) => {
     setQuantity((prevState) => prevState - 1);
   };
 
+  // ZUSTAND ACTION
   const addItem = () => {
     const cartProduct = {
       productId: product.id,

@@ -122,6 +122,17 @@ const TeaCollections = () => {
               </div>
             </div>
 
+            {/* NO RESULTS FOUND */}
+            {finalData.length === 0 && (
+              <div className={styles.no_results_container}>
+                <h4>No results found</h4>
+                <p>
+                  <a href={"/collections/tea"}>Click here</a> to view all of our
+                  teaware products.
+                </p>
+              </div>
+            )}
+
             {/* RESULTS GRID */}
             <div className={styles.results_grid}>
               {finalData.map((each, index) => (

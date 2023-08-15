@@ -130,9 +130,9 @@ const Navbar = () => {
       <header className={styles.header}>
         <nav>
           <div className={styles.image_container}>
-            <a href={"/"}>
+            <Link href={"/"}>
               <Image src={logo} alt="Stash Logo" />
-            </a>
+            </Link>
           </div>
           <div className={styles.secondary_nav_container}>
             <ul className={styles.nav_menu_items}>

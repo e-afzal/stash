@@ -61,7 +61,7 @@ const gifts = [
       // EDIBLE RELATED
       {
         title: "Cookie Information",
-        content: `Ingredients: all-natural|Contains: Egg, Milk, Wheat. NOTE: Manufactured on Shared Equipment that processes Peanuts, Sesame Seed, Soy, and Tree Nuts.|Cookies made in the USA|9 oz box`,
+        content: `The cookie ingredients are all-natural, made within the USA and contains: Egg, Milk, Wheat. It should be noted that the manufacturing occurs on Shared Equipment that processes Peanuts, Sesame Seed, Soy, and Tree Nuts. The overall weight of the box is 9 oz.`,
       },
     ],
     type: "gift",
