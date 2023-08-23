@@ -24,8 +24,13 @@ import SearchModal from "./SearchModal";
 
 // CLERK
 import { SignedIn, SignedOut, SignOutButton } from "@clerk/nextjs";
+import { useCart } from "@/app/store/useCart";
+
+// ZUSTAND RELATED
 
 const NavbarMobile = () => {
+  //? ZUSTAND RELATED
+  const { items } = useCart();
   //? DOM ELEMENTS
   const menuItems = [
     {
@@ -133,9 +138,10 @@ const NavbarMobile = () => {
                 <p>Account</p>
               </Link>
             </SignedOut>
-            <Link href={"/cart"}>
+            <Link href={"/cart"} className={styles.cart_link}>
               <Image src={bagIcon} alt="Shopping Bag Icon" />
               <p>Cart</p>
+              {items.length >= 1 && <span></span>}
             </Link>
             <button onClick={handleModalOpen}>
               <Image src={searchIcon} alt="Search Icon" />

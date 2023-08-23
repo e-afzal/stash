@@ -57,6 +57,19 @@ header#header_mobile {
           color: #000;
         }
       }
+      a.cart_link {
+        position: relative;
+        span {
+          position: absolute;
+          top: -1px;
+          right: 0px;
+          background-color: hsl(208, 100%, 48%);
+          width: 1.15rem;
+          height: 1.15rem;
+          border-radius: 50%;
+          display: inline-block;
+        }
+      }
     }
     // input {
     //   display: block;
