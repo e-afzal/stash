@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 // STYLES
 import styles from "@/public/styles/pages/single_product/product.module.scss";
@@ -62,12 +63,24 @@ const SingleProduct = ({ params }) => {
       quantity,
     };
     addItemToCart(cartProduct);
+    toast.success(`Item added to cart`, {
+      position: "bottom-center",
+      style: {
+        fontFamily: `Kanit,sans-serif`,
+        fontWeight: 300,
+        fontSize: "15px",
+      },
+    });
   };
 
   return (
     <>
       <Navbar />
       <NavbarMobile />
+
+      {/* TOAST */}
+      <Toaster />
+
       <main id={styles.main}>
         <div className={styles.main_container}>
           {/* IMAGES */}

@@ -43,13 +43,10 @@ const Cart = () => {
   const incrementQuantity = (id, quantity) => {
     if (quantity === 10) return;
     increaseQuantity(id, quantity);
-    console.log(id, quantity);
   };
   const decrementQuantity = (id, quantity) => {
     if (quantity === 1) return;
     decreaseQuantity(id, quantity);
-    console.log(id, quantity);
-    // setQuantity((prevState) => prevState - 1);
   };
   const removeItem = (id) => {
     removeItemFromCart(id);
@@ -60,6 +57,7 @@ const Cart = () => {
       <>
         <Navbar />
         <NavbarMobile />
+
         <main id={styles.main}>
           <h2 className={styles.cart_title}>your bag</h2>
           {/* IF ITEMS IN CART */}
@@ -138,6 +136,7 @@ const Cart = () => {
             </div>
           )}
         </main>
+
         <Footer />
       </>
     );
