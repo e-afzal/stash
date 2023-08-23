@@ -17,9 +17,12 @@ import accountIcon from "@/public/icons/account.svg";
 import bagIcon from "@/public/icons/bag.svg";
 
 // CLERK
-import { SignedIn, UserButton, SignedOut } from "@clerk/nextjs";
+import { SignedOut } from "@clerk/nextjs";
+import { useCart } from "@/app/store/useCart";
 
 const Navbar = () => {
+  //? ZUSTAND RELATED
+  const { items } = useCart();
   //? STATES
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -122,6 +125,8 @@ const Navbar = () => {
     },
   ];
 
+  //? ZUSTAND RELATED
+
   return (
     <>
       {/* SEARCH MODAL */}
@@ -152,8 +157,9 @@ const Navbar = () => {
               <button onClick={() => setModalOpen(true)}>
                 <Image src={searchIcon} alt="Search Icon" />
               </button>
-              <Link href={"/cart"}>
+              <Link href={"/cart"} className={styles.cart_link}>
                 <Image src={bagIcon} alt="Shopping Bag Logo" />
+                {items.length >= 1 && <span></span>}
               </Link>
             </div>
           </div>

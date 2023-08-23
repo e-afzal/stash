@@ -56,6 +56,19 @@ header.header {
           height: 25px;
           width: auto;
         }
+        a.cart_link {
+          position: relative;
+          span {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            background-color: yellow;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            display: inline-block;
+          }
+        }
       }
     }
   }
