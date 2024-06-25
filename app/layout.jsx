@@ -7,20 +7,22 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {
-  title: "Stash",
+  title: "Stash Tea",
   description: "Stash Tea: Tea Blends, Recipes, Gifts & Teaware",
   openGraph: {
-    title: "Stash",
+    title: "Stash Tea",
     description: "Stash Tea: Tea Blends, Recipes, Gifts & Teaware",
     url: "https://stash-ead.vercel.app",
     type: "website",
-    // images: [
-    //   {
-    //     url: "https://www.essamafzal.com/thumbnail.png",
-    //     width: 1366,
-    //     height: 768,
-    //   },
-    // ],
+    images: [
+      {
+        url: "https://res.cloudinary.com/ddeima5fc/image/upload/v1719324268/stash_thumbnail_yoeaww.jpg",
+        width: 1080,
+        height: 1080,
+        // width: 1200,
+        // height: 627,
+      },
+    ],
   },
 };
 
@@ -28,8 +30,8 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider
       allowedRedirectOrigins={["http://localhost:3000/"]}
-      signInUrl="/sign-in"
-      signUpUrl="/sign-up"
+      signInUrl='/sign-in'
+      signUpUrl='/sign-up'
       appearance={{
         userButton: {},
         elements: {},
@@ -41,7 +43,7 @@ export default function RootLayout({ children }) {
         },
       }}
     >
-      <html lang="en">
+      <html lang='en'>
         <body>{children}</body>
       </html>
     </ClerkProvider>
